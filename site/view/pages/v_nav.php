@@ -23,8 +23,8 @@
     </div>
     <div class="menu col-lg-9">
         <ul>
-            <li><a href="index.php?cn=sach&method=Hien_trang_chu" >Trang chủ</a></li>
-            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="index.php?cn=sach&method=Hien_trang_chu" title="Trang chủ">Trang chủ</a></li>
+            <li><a href="#" title="giới thiệu">Giới thiệu</a></li>
             <li><a href="#">Tin tức</a></li>
             <li><a href="#">Hướng dẫn</a></li>
         </ul>

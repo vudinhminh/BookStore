@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Bán Sách</title>
+        <title>Minh Vũ</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
