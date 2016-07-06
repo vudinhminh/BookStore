@@ -1,0 +1,165 @@
+body{
+    /*background-color: #F7FBFC;*/
+}
+.timkiem{
+    
+}
+.ImageTimKiem{
+    height: 30px;
+    margin-top: 50px;
+      
+}
+.txttimkiem{
+    height: 40px;
+    margin-left: 50px;
+}
+
+.dangnhap{
+    margin-top: 50px;
+    float: right;
+}
+
+
+.giohang{
+    height: 40px;
+    float: right;
+    margin-top: 50px;
+}
+
+.danhmucsp{
+    height: 40px;
+    line-height: 40px;
+    background-color: #78D2F0;
+    text-align: center;
+}
+
+
+.menu ul{
+	padding: 0;
+}
+
+.menu ul li{
+        background-color: #78D2F0;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	list-style-type: none;
+	float: left;
+	position: relative;
+
+
+}
+.menu ul li a{
+	text-decoration: none;
+	color: black;
+	display: block;
+	text-align: center;
+	transition: all 1s ;
+	text-transform: uppercase;
+	
+}
+.menu ul li a:hover{
+	background-color: #3790BF;
+	color: #FFFFFF;
+
+}
+
+.sub-menu-ngang{
+	list-style-type:none;
+        margin:-10px 0 0 0;
+        padding: 0px;
+        
+}
+
+.sub-menu-ngang li a{
+	text-decoration:none;
+        list-style-type:none;
+	color:#333;
+	padding-left:20px;
+	height:40px;
+	line-height:40px;
+	display:block;
+	transition:all 1s;
+        background-color:#CFE6E5;
+        
+}
+.sub-menu-ngang li a:hover{
+	background-color:#3790BF;
+	color:#FFF;
+}
+.right{
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+}
+.tieude{
+     font-weight: bold; 
+}
+.xemtatca{
+    float: right;
+    margin-top: -34px;
+    font-size: 16px;
+}
+.anhchitiet{
+    width: 100%;
+    height: 266px; 
+        
+}
+.anhchitiet1{
+    width: 100%;
+    height: 475px; 
+        
+}
+.text_chi_tiet{
+    font-size: 18px;
+    font-weight: 400;
+}
+.giamoi_chitiet{
+    font-size: 45px;
+    color: #F05661;
+}
+
+.nxb{
+    color: #58BEE0;
+}
+.tensach{
+    font-size: 20px;
+}
+.chitietsach{
+    cursor: pointer;
+}
+.giacu{
+   color: #CFD1C0;
+   text-decoration: line-through;
+}
+.giamoi{
+    color: red;
+}
+.giamgia{
+    position: absolute;
+    bottom: 35px;
+    right: 20px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #DBF255;
+}
+.themvaogiohang{
+    text-align: center;
+    background-color: #d58512;
+    border: 0px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+#footer{
+    padding-top: 40px;
+    background-color: #E9F7F7;
+    text-align: center;
+}
+.left{
+    margin-bottom: 20px;
+}
+/*Phân trang*/
+.phantrang{
+    margin: 0 auto;
+    text-align: center;
+}

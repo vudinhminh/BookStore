@@ -1,0 +1,17 @@
+
+/*Phân trang*/
+.phantrang1 {
+    padding:2px 5px 2px 5px;
+    margin:2px;
+    border:1px solid #999;
+    color: #666;
+}
+.phantrang2 {
+
+    background-color: #999;
+
+}
+.phantrang{
+    margin: 0 auto;
+    text-align: center;
+}
