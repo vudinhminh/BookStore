@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['admin'])){
+        header('location:login.php');
+    }
     include_once 'view/v_head.php';
     include_once 'model/m_database.php';
     if(!isset($_GET['sk'])){

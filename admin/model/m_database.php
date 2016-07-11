@@ -106,6 +106,30 @@
             $hientrang .="</ul></div>";
             echo $hientrang;
         }
+        function Login($tendangnhap,$matkhau){
+            $matkhau=  md5($matkhau) ;
+            $sqlkt1="select * from taikhoan where TenDangNhap='".$tendangnhap."' and Quyen=1";
+            $querykt1=  mysqli_query($this->__conn, $sqlkt1);
+            $sqlkt2="select * from taikhoan where TenDangNhap='".$tendangnhap."' and MatKhau='".$matkhau."'";
+            $querykt2=  mysqli_query($this->__conn, $sqlkt2);
+            $row=mysqli_fetch_array($querykt2);
+            $quyen=$row['Quyen'];
+            $dem1=mysqli_num_rows($querykt1);
+            $dem2=mysqli_num_rows($querykt2);
+            $err ='';
+            if($dem1<1){
+                $err = 'Tên đăng nhập chưa đúng';
+            }
+            elseif($dem2>0&&$quyen==1){
+                $_SESSION['admin']=$row['TenHienThi']; 
+                header('location:admin.php');
+            }
+            else {
+                $err = 'mật khẩu không đúng';
+            }
+            return $err;
+
+        }
         
     }
        // $tenloai='minh';

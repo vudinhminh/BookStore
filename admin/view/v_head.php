@@ -36,7 +36,7 @@
                             </div>
                             <div class="profile_info">
                                 <span>Xin chào,</span>
-                                <h2>Admin</h2>
+                                <h2><?php echo $_SESSION['admin'] ?></h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -89,12 +89,12 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="../public/images/admin.jpg" alt="">Admin
+                                        <img src="../public/images/admin.jpg" alt=""><?php echo $_SESSION['admin'] ?>
                                         <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                                         <li><a href="#"><i class=" pull-right fa "></i> Đổi mật khẩu</a></li>
-                                        <li><a href="#"><i class="fa fa-sign-out pull-right"></i> Đăng xuất</a></li>
+                                        <li><a href="login.php?dn=xldangxuat"><i class="fa fa-sign-out pull-right"></i> Đăng xuất</a></li>
                                     </ul>
                                 </li>
 

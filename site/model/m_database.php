@@ -78,6 +78,19 @@
             }
             return $result;
         }
+        function GetAll_Sach_gia($where,$limit,$page){
+            $sql = 'select id,HinhAnh,TenSach,sach.id_tg,sach.id_nxb,tacgia.TenTG,nhaxuatban.TenNXB,GiaCu,loaisach.TenLoai,SoTrang,SoLuong,'
+                    . 'GiaMoi,round(GiaMoi/GiaCu*100-100,0) as gia from sach,loaisach,nhaxuatban,tacgia '
+                    . ' where sach.id_loai=loaisach.id_loai and sach.id_nxb=nhaxuatban.id_nxb and'
+                    . ' sach.id_tg=tacgia.id_tg and '.$where.' order by id DESC limit '.$limit*($page-1).','.$limit;
+          
+            $query =  mysqli_query($this->__conn, $sql);
+            $result = array();
+            while ($row =  mysqli_fetch_assoc($query)){
+                $result[] = $row;
+            }
+            return $result;
+        }
         function GetAll_Sach_IdNhaXuatBan($id_nxb,$limit,$page){
             $sql = 'select id,HinhAnh,TenSach,tacgia.TenTG,sach.id_tg,sach.id_nxb,nhaxuatban.TenNXB,GiaCu,loaisach.TenLoai,SoTrang,SoLuong,'
                     . 'GiaMoi,round(GiaMoi/GiaCu*100-100,0) as gia from sach,loaisach,nhaxuatban,tacgia '
@@ -122,7 +135,7 @@
             $sotrang = ceil($tongdong/$limit);
             $trangtruoc = $page - 1;
             $trangsau = $page + 1;
-            $hientrang ="<div class='phantrang' style='clear: both;'><ul class='pagination'>";
+            $hientrang ="<div class='pagination' style='clear: both;'><ul class='pagination'>";
             if($page>1){
             $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' ><</a></li>";
             }
@@ -136,7 +149,7 @@
             $hientrang.="<li><a href='".$url."&page=".$trangsau."' data-id='".$trangsau."' >></a></li>";
             }
             $hientrang .="</ul></div>";
-            echo $hientrang;
+            return $hientrang;
         }
         function PhanTrangsachmoi($url,$limit,$page){
             $sql1 = 'select * from sach ';
@@ -145,9 +158,9 @@
             $sotrang = ceil($tongdong/$limit);
             $trangtruoc = $page - 1;
             $trangsau = $page + 1;
-            $hientrang ="<div class='phantrang' style='clear: both;'><ul class='pagination'>";
+            $hientrang ="<div class='pagination' style='clear: both;'><ul class='pagination'>";
             if($page>1){
-            $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' ><</a></li>";
+            $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' >Prev</a></li>";
             }
             for($i=1; $i <= $sotrang;$i++)
             {
@@ -156,12 +169,110 @@
                 $hientrang .= " <li class='".$phantrang2."'><a href='".$url."&page=".$i."' data-id='".$i."'>".$i."</a></li> ";
             }
             if($page<$sotrang){
-            $hientrang.="<li><a href='".$url."&page=".$trangsau."' data-id='".$trangsau."' >></a></li>";
+            $hientrang.="<li><a href='".$url."&page=".$trangsau."' data-id='".$trangsau."' >Next</a></li>";
             }
             $hientrang .="</ul></div>";
-            echo $hientrang;
+            return $hientrang;
         }
+         function GetLimit($table,$limit){
+            $sql = "select * from ".$table.' limit 0,'.$limit;
+            $query =  mysqli_query($this->__conn, $sql);
+            $result = array();
+            while ($row =  mysqli_fetch_assoc($query)){
+                $result[] = $row;
+            }
+            return $result;
+        }
+        function Login($tendangnhap,$matkhau){
+            $matkhau=  md5($matkhau) ;
+            $sqlkt1="select * from taikhoan where TenDangNhap='".$tendangnhap."' and Quyen=2";
+            $querykt1=  mysqli_query($this->__conn, $sqlkt1);
+            $sqlkt2="select * from taikhoan where TenDangNhap='".$tendangnhap."' and MatKhau='".$matkhau."'";
+            $querykt2=  mysqli_query($this->__conn, $sqlkt2);
+            $row=mysqli_fetch_array($querykt2);
+            $quyen=$row['Quyen'];
+            $dem1=mysqli_num_rows($querykt1);
+            $dem2=mysqli_num_rows($querykt2);
+            $err = '';
+            if($dem1<1){
+                $err = 'Tên đăng nhập chưa đúng';
+            }
+            elseif($dem2>0&&$quyen==2){
+                $_SESSION['name']=$row['TenHienThi'];
+                ob_start();
+            ?>
+            <script>
+                alert(1);
+            </script>
+            <?php
+            $html = ob_get_clean();
+            echo $html;
+            header('location:index2.php');
+            }
+            else {
+                $err = 'mật khẩu không đúng';
+           }
+           return $err;
+        }
+        function Insert($table,$data){
+            $list_key="";
+            $list_values="";
+            foreach($data as $keys => $values){
+                $list_key .= $keys.","; 
+                $list_values .= "'".$values."',";                 
+            }	
+            $sql="insert into ".$table." (".rtrim($list_key,',').") values(".  rtrim($list_values,',').")";
+            //echo $sql;
+            mysqli_query($this->__conn, $sql);
+//            return TRUE;
+	}	
+        function LuotXem($id){
+            $sql = 'select * from sach where id ='.$id;
+            $query = mysqli_query($this->__conn, $sql);
+            $row = mysqli_fetch_assoc($query);
+            $luotxem = $row['SoLuotXem'];
+            $luotxem ++;
+            $sql1 = 'update sach set SoLuotXem ='.$luotxem.' where id = '.$id;
+            $query = mysqli_query($this->__conn, $sql1);
+        }
+        function Get_Sach_xem_nhieu(){
+            $sql = 'select id,SoLuotXem,HinhAnh,TenSach,sach.id_tg,tacgia.TenTG,nhaxuatban.TenNXB,GiaCu,loaisach.TenLoai,SoTrang,SoLuong,'
+                    . 'GiaMoi,round(GiaMoi/GiaCu*100-100,0) as gia from sach,loaisach,nhaxuatban,tacgia '
+                    . ' where sach.id_loai=loaisach.id_loai and sach.id_nxb=nhaxuatban.id_nxb and'
+                    . ' sach.id_tg=tacgia.id_tg  order by SoLuotXem DESC limit 0,4';
+            $query =  mysqli_query($this->__conn, $sql);
+            $result = array();
+            while ($row =  mysqli_fetch_assoc($query)){
+                $result[] = $row;
+            }
+            return $result;
+        }
+        function Dat_Hang($arr,$session){
+            $tongtien = 0;
+            foreach ($session as $val){
+                $tongtien += $val['soluong']*$val['dongia'];
+            }
+            $arr['ThanhTien'] = $tongtien;
+            $this->Insert('donhang',$arr);
+            $sql = 'select * from donhang order by id_hd DESC limit 0,1';
+            $query = mysqli_query($this->__conn, $sql);
+            $row = mysqli_fetch_assoc($query);
+            //$row['id_hd']++;
+            foreach ($session as $val){
+                $arr1 = array('id_hd'=>$row['id_hd'],'id'=>$val['id'],'TenSach'=>$val['tensach'],'DonGia'=>$val['dongia'],'SoLuong'=>$val['soluong']);
+                $this->Insert('chitiethoadon',$arr1);
+            }
+        }
+
         
     }
+//           $tenloai='minh';
+//	$them_loai_sach = new M_database();
+//        $them_loai_sach->Insert('loaisach', array('TenLoai'=>$tenloai));
+    
+//    $a=new M_database();
+//    $LuotXem=$a->LuotXem(2);
+//    echo '<pre>';
+//    print_r($result);
+//    echo "</pre>";
 
-?>
