@@ -1,19 +1,14 @@
 <?php
-    include_once 'site/model/m_database.php';
-    include_once 'site/view/pages/v_head.php';
-    include_once 'site/view/pages/v_nav.php';
-    include_once 'site/view/pages/v_content.php';
-    if(!isset($_GET["cn"])){
-        include_once 'site/controller/c_sach.php';
+include_once 'site/model/m_database.php';
+include_once 'site/view/pages/v_header.php';
+    $cn = isset($_GET['cn'])?$_GET['cn']:'home';
+    switch($cn)
+    {
+        case 'home': 
+            include_once 'site/controller/c_home.php';
+            break;
+        case 'giohang': 
+            include_once 'site/controller/c_gio_hang.php';
+            break;
     }
-    else {
-        $cn=$_GET["cn"];
-        switch($cn)
-        {
-            case "sach":
-                include_once 'site/controller/c_sach.php';
-                break;
-        } 
-    }
-    include_once 'site/view/pages/v_footer.php';
-?>
+include_once 'site/view/pages/v_footer.php';

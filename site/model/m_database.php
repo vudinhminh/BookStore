@@ -198,16 +198,11 @@
                 $err = 'Tên đăng nhập chưa đúng';
             }
             elseif($dem2>0&&$quyen==2){
-                $_SESSION['name']=$row['TenHienThi'];
-                ob_start();
-            ?>
-            <script>
-                alert(1);
-            </script>
-            <?php
-            $html = ob_get_clean();
-            echo $html;
-            header('location:index.php');
+                $_SESSION['user']['name']=$row['TenHienThi'];
+                $_SESSION['user']['sdt']=$row['SDT'];
+                $_SESSION['user']['email']=$row['Email'];
+                $_SESSION['user']['diachi']=$row['DiaChi'];
+                header('location:index.php');
             }
             else {
                 $err = 'mật khẩu không đúng';

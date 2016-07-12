@@ -14,7 +14,7 @@ class C_login{
     }
     function XLDangXuat(){
         session_start();
-        unset($_SESSION['name']);
+        unset($_SESSION['user']);
         header('location:login.php');
     }
     function Register(){

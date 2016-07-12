@@ -27,8 +27,8 @@
                     <section class="span8">
                         <ul class="top-nav2">
                             <?php
-                                if(isset($_SESSION['name'])){
-                                    echo "<li class'dangnhap2'><a>Xin chào ".$_SESSION['name']."</a></li><li><a href='login.php?dn=XLDangXuat'>Đăng xuất</a></li>";
+                                if(isset($_SESSION['user'])){
+                                    echo "<li class'dangnhap2'><a>Xin chào ".$_SESSION['user']['name']."</a></li><li><a href='login.php?dn=XLDangXuat'>Đăng xuất</a></li>";
                                 }else{
                             ?>
                             <li><a href="login.php">Đăng nhập</a></li>

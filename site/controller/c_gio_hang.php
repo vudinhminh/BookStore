@@ -1,5 +1,4 @@
 <?php
-
 class C_gio_hang{
     function Hien_gio_hang(){
         include_once 'site/view/v_gio_hang.php';
@@ -41,6 +40,11 @@ class C_gio_hang{
     }
     function Sua(){
         $soluong = $_POST['txtSoLuong'];
+        echo __FILE__;
+        echo '<pre>';
+        var_dump($soluong);
+        echo '</pre>';
+        echo __LINE__;
         foreach ($soluong as $key => $val){
             if($val<=0){
                 unset($_SESSION['giohang'][$key]);
@@ -49,7 +53,7 @@ class C_gio_hang{
                 $_SESSION['giohang'][$key]['soluong']=$val;
             }
         }
-         header('location:?cn=giohang&method=Hien_gio_hang');   
+        header('location:?cn=giohang&method=Hien_gio_hang');   
     }
     function XL_Dat_Hang(){
         $hoten = $_POST['txtHoTen'];
@@ -62,7 +66,6 @@ class C_gio_hang{
         $home->Dat_Hang($arr,$_SESSION['giohang']);
         unset($_SESSION['giohang']);
         Echo "<h2>Đặt hàng thành công</h2>";
-        
     }
 }
 $method = isset($_GET['method'])?$_GET['method']:'Hien_gio_hang';
