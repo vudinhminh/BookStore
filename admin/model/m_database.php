@@ -39,7 +39,7 @@
                 $list_values .= "'".$values."',";                 
             }	
             $sql="insert into ".$table." (".rtrim($list_key,',').") values(".  rtrim($list_values,',').")";
-            //echo $sql;
+            echo $sql;
             mysqli_query($this->__conn, $sql);
             return TRUE;
 	}	

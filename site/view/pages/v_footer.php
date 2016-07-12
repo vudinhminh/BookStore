@@ -75,7 +75,7 @@
                             <p>© 2016 - Bản quyền của developer Minh Vũ - Minhvu.vn</p>
                         </article>
                         <article class="span6 copy-right">
-                            <p>Cửa hàng <a href="cn=home">MinhVu</a></p>
+                            <p>Cửa hàng <a href="?cn=home">MinhVu</a></p>
                         </article>
                     </section>
                 </section>

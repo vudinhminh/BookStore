@@ -3,7 +3,7 @@
     if(!isset($_SESSION['admin'])){
         header('location:login.php');
     }
-    include_once 'view/v_head.php';
+    include_once 'view/v_head1.php';
     include_once 'model/m_database.php';
     if(!isset($_GET['sk'])){
         include_once 'controller/c_sach.php';
@@ -24,7 +24,16 @@
             case 'nhaxuatban':
                 include_once 'controller/c_nha_xuat_ban.php';
                 break;
+            case 'donhang':
+                include_once 'controller/c_don_hang.php';
+                break;
+            case 'chitietdonhang':
+                include_once 'controller/c_chi_tiet_don_hang.php';
+                break;
+            case 'taikhoan':
+                include_once 'controller/c_thanh_vien.php';
+                break;
         }
     }
-    include_once 'view/v_footer.php';
+    include_once 'view/v_footer1.php';
 ?>

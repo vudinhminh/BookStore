@@ -42,7 +42,7 @@ class C_login{
         include_once 'site/view/v_register.php';
         }
         if($kt == FALSE){
-            $arr =array('TenHienThi'=>$hoten,'TenDangNhap'=>$tendangnhap,'MatKhau'=>$matkhau,'Email'=>$email,'SDT'=>$sdt,'DiaChi'=>$diachi,'Quyen'=>1);
+            $arr =array('TenHienThi'=>$hoten,'TenDangNhap'=>$tendangnhap,'MatKhau'=>$matkhau,'Email'=>$email,'SDT'=>$sdt,'DiaChi'=>$diachi,'Quyen'=>2);
             $them->Insert('taikhoan', $arr);
             header('location:login.php?dn=login');
         }

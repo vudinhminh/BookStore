@@ -163,3 +163,26 @@ body{
     margin: 0 auto;
     text-align: center;
 }
+#logo img{
+    width: 100% !important;
+}
+@media (max-width: 500px) {
+    .table_gio_hang {
+        width: 100%;
+        display:block;
+    }
+
+    .table_gio_hang table {
+        width: 100%;
+        display: inline-block;
+        overflow: auto;
+    }
+    .table_gio_hang img{
+        width: 70px !important;
+        height: 100px !important;
+    }
+    
+}
+textarea{
+        height: 100px !important;
+    }

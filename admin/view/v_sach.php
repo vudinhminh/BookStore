@@ -1,7 +1,8 @@
 <input type="button" data-page="<?php echo $page ?>" class="sua_sach btn btn-info" data-toggle="modal" data-target="#myModal" value="Thêm Sách">
 
-<div  class="col-md-12">
-    <form action="" method="POST" name="frm2">
+<div class="row">
+<div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="table_don_hang">
         <table style="text-align: center" class="table table-hover table-bordered table-striped" >
         <tr><td colspan="12"><h3>Danh Sách sách</h3></td></tr>
         <tr >
@@ -43,7 +44,8 @@
            }
         ?>
     </table>
-    </form>
+    </div>
+</div>
 </div>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">

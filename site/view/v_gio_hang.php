@@ -1,6 +1,7 @@
                     <div class="heading-bar">
                         <a class="more-btn">Tiến hành kiểm tra</a>
                     </div>
+                    <div class="table_gio_hang">
                     <form method="POST" action="?cn=giohang&method=sua" id="form_gio_hang">
                         <?php
                             if(isset($_SESSION['giohang']) && empty($_SESSION['giohang']) == FALSE){
@@ -22,7 +23,7 @@
                                 <td><?php echo $val['tensach'] ?></td>
                                 <td class="center1"><?php echo number_format($val['dongia'],0,'.',',') ?></td>
                                 <td class="center1" ><input class="soluong1" name="txtSoLuong[<?php echo  $val['id']?>]" size="2" type="text" value="<?php echo  $val['soluong']?>"/></td>
-                                <td  class="center1"><?php echo number_format($val['dongia']*$val['soluong'],0,'.',',') ?></td>
+                                <td  class="center1 img_gio_hang"><?php echo number_format($val['dongia']*$val['soluong'],0,'.',',') ?></td>
                                 <td ><a href="?cn=giohang&method=xoa&id_xoa=<?php echo  $val['id']?>"> <i class="icon-trash"></i></a></td>
                             </tr>
                             <?php 
@@ -42,6 +43,7 @@
                             }
                         ?>
                     </form>
+                    </div>
                     <div class="heading-bar">
                         <a class="more-btn">Tiến hành đặt hàng</a>
                     </div>

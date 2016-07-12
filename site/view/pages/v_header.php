@@ -22,7 +22,7 @@
             <section class="container-fluid container">
                 <section class="row-fluid">
                     <section class="span4">
-                        <h1 id="logo"> <a href="index2.php?cn=home"><img src="public/images/logo.png"/></a> </h1>
+                        <h1 id="logo"> <a href="?cn=home"><img src="public/images/logo.png"/></a> </h1>
                     </section>
                     <section class="span8">
                         <ul class="top-nav2">

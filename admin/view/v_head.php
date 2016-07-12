@@ -48,12 +48,13 @@
                                 <h3>Danh mục</h3>
                                 <ul class="nav side-menu">
                                     <li><a href="#"><i class="fa fa-home"></i> Trang chủ</a></li>
-                                    <li><a href="admin.php?sk=sach"><i class="fa "></i> Quản lý sách </a></li>
-                                    <li><a href="admin.php?sk=nhaxuatban"><i class="fa "></i>Nhà xuất bản </a></li>
-                                    <li><a href="admin.php?sk=loaisach"><i class="fa "></i> Loại sách</a></li>
-                                    <li><a href="admin.php?sk=tacgia"><i class="fa "></i> Tác giả</a></li>
-                                    <li><a><i class="fa "></i>Đơn hàng</a></li>
-                                    <li><a><i class="fa "></i>Thành viên</a></li>
+                                    <li><a href="?sk=sach"><i class="fa "></i> Quản lý sách </a></li>
+                                    <li><a href="?sk=nhaxuatban"><i class="fa "></i>Nhà xuất bản </a></li>
+                                    <li><a href="?sk=loaisach"><i class="fa "></i> Loại sách</a></li>
+                                    <li><a href="?sk=tacgia"><i class="fa "></i> Tác giả</a></li>
+                                    <li><a href="?sk=donhang"><i class="fa "></i>Đơn hàng</a></li>
+                                    <li><a href=""><i class="fa "></i>Chi tiết đơn hàng</a></li>
+                                    <li><a href="?sk=taikhoan"><i class="fa "></i>Thành viên</a></li>
                                     <li><a><i class="fa "></i>Thống kê</a></li>
                                     <li><a><i class="fa "></i>Báo cáo</a></li>
                                 </ul>

@@ -445,6 +445,184 @@ $(document).ready(function (e){
             
         });        
     });
+    // thêm , sửa thanh viên
+    $('.sua_thanh_vien').click(function (){
+        $.ajax({
+            url : 'controller/c_thanh_vien.php?method=Hien_sua_thanh_vien',
+            data:{
+                id_sua : $(this).data('id_sua'),
+                page : $(this).data('page')
+            },
+            type: 'POST',
+            dataType: 'text',
+            success: function (result) {
+                $('#hien_sua_thanh_vien').html(result);
+                $('#loginForm').formValidation({
+                    framework: 'bootstrap',
+                    icon: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        txtTenDN: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập tên nhà xuất bản'
+                                }
+                            }
+                        },
+                        txtTenHienThi: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập tên nhà xuất bản'
+                                }
+                            }
+                        },
+                        txtEmail: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Email không được để trống'
+                                },
+                                emailAddress: {
+                                    message: 'Địa chỉ email không hợp lệ'
+                                },
+                                blank: {}
+                            }
+                        },
+                        txtSDT: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập Số điện thoại'
+                                },
+                                regexp: {
+                                    message: 'Các số điện thoại chỉ có thể chứa các chữ số ',
+                                    regexp: /^[0-9]+$/
+                                },
+                                stringLength: {
+                                    min: 3,
+                                    max: 11,
+                                    message: 'số điện thoại phải dài từ 3->11 kí tự'
+                                }
+                            }
+                        },
+                        txtDiaChi: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập địa chỉ'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+    // Xóa thành viên
+    $('.xoa_thanh_vien').click(function (){
+        $.ajax({
+            url : 'controller/c_thanh_vien.php?method=Xoa_thanh_vien',
+            data: {
+                id_xoa : $(this).data('id_xoa')                
+            },
+            dataType: 'text',
+            type: 'POST',
+            success: function (result) {
+                $('#right1').html(result);
+               location.reload();
+            }
+            
+        });        
+    });
+    // thêm , sửa thanh viên
+    $('.sua_don_hang').click(function (){
+        $.ajax({
+            url : 'controller/c_don_hang.php?method=Hien_sua_don_hang',
+            data:{
+                id_sua : $(this).data('id_sua'),
+                page : $(this).data('page')
+            },
+            type: 'POST',
+            dataType: 'text',
+            success: function (result) {
+                $('#hien_sua_don_hang').html(result);
+                $('#loginForm').formValidation({
+                    framework: 'bootstrap',
+                    icon: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        txtTenDN: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập tên nhà xuất bản'
+                                }
+                            }
+                        },
+                        txtTenHienThi: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập tên nhà xuất bản'
+                                }
+                            }
+                        },
+                        txtEmail: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Email không được để trống'
+                                },
+                                emailAddress: {
+                                    message: 'Địa chỉ email không hợp lệ'
+                                },
+                                blank: {}
+                            }
+                        },
+                        txtSDT: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập Số điện thoại'
+                                },
+                                regexp: {
+                                    message: 'Các số điện thoại chỉ có thể chứa các chữ số ',
+                                    regexp: /^[0-9]+$/
+                                },
+                                stringLength: {
+                                    min: 3,
+                                    max: 11,
+                                    message: 'số điện thoại phải dài từ 3->11 kí tự'
+                                }
+                            }
+                        },
+                        txtDiaChi: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Chưa nhập địa chỉ'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+    // Xóa thành viên
+    $('.xoa_don_hang').click(function (){
+        $.ajax({
+            url : 'controller/c_don_hang.php?method=Xoa_don_hang',
+            data: {
+                id_xoa : $(this).data('id_xoa')                
+            },
+            dataType: 'text',
+            type: 'POST',
+            success: function (result) {
+                $('#right1').html(result);
+               location.reload();
+            }
+            
+        });        
+    });
 });
 
 //    var page_id = 1;

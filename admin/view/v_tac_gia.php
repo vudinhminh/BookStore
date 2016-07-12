@@ -1,7 +1,8 @@
 <!--<button type="button" class="sua_tac_gia btn btn-info btn-lg " data-toggle="modal" data-target="#myModal">Thêm tác giả</button>-->
 <input type="button" class="sua_tac_gia btn btn-info" data-page="<?php echo $page ?>" data-toggle="modal" data-target="#myModal1" value="Thêm Tác Giả">
-<div  class="col-md-12">
-    <form action="" method="POST" name="frm2">
+<div class="row">
+<div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="table_nha_xuat_ban">
         <table style="text-align: center" class="table table-hover table-bordered table-striped" >
         <tr><td colspan="6"><h3>Danh Sách tác giả</h3></td></tr>
         <tr >
@@ -31,7 +32,8 @@
            }
         ?>
     </table>
-    </form>
+    </div>
+</div>
 </div>
 <div id="myModal1" class="modal fade" role="dialog">
     <div class="modal-dialog" >

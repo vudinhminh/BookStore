@@ -61,7 +61,8 @@ class C_gio_hang{
         $sdt = $_POST['txtSoDienThoai'];
         $diachi = $_POST['txtDiaChi'];
         $ghichu = isset($_POST['txtGhiChu'])?$_POST['txtGhiChu']:'';
-        $arr =array('TenKH'=>$hoten,'Email'=>$email,'SDT'=>$sdt,'DiaChi'=>$diachi,'GhiChu'=>$ghichu,'ThanhTien'=>'10','TrangThai'=>1);
+        $ngay = date("Y-m-d h:i:sa");
+        $arr =array('TenKH'=>$hoten,'Email'=>$email,'SDT'=>$sdt,'DiaChi'=>$diachi,'GhiChu'=>$ghichu,'ThanhTien'=>'10','NgayDat'=>$ngay,'TrangThai'=>1);
         $home = new M_database();
         $home->Dat_Hang($arr,$_SESSION['giohang']);
         unset($_SESSION['giohang']);

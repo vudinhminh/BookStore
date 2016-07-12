@@ -1,6 +1,7 @@
 <input type="button" data-page="<?php echo $page ?>" class="sua_nha_xuat_ban btn btn-info" data-toggle="modal" data-target="#myModal" value="Thêm Nhà Xuất Bản">
-<div  class="col-md-12">
-    <form action="" method="POST" name="frm2">
+<div class="row">
+<div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="table_nha_xuat_ban">
         <table style="text-align: center" class="table table-hover table-bordered table-striped" >
             <tr><td colspan="6"><h3>Danh Sách Nhà xuất bản</h3></td></tr>
             <tr >
@@ -30,7 +31,8 @@
             }
             ?>
         </table>
-    </form>
+    </div>
+</div>
 </div>
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog" >
