@@ -1,2 +1,2 @@
 <?php
-    include_once 'site/controller/c_index.php';
+    include_once 'site/controller/c_index1.php';

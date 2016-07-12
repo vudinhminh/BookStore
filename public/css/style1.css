@@ -29,3 +29,14 @@
 input{
     height: 35px !important;
 }
+.soluong1{
+    width: 40px !important; 
+    text-align: center;    
+}
+#form_gio_hang img{
+    width: 100px ; 
+    height: 150px ;
+}
+#form_gio_hang .center1{
+    text-align: center;
+}

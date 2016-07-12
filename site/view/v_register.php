@@ -85,7 +85,7 @@
                                     <input type="submit" class="btn btn-info" value="Đăng kí"/>
                                     <input type="reset" class="btn btn-default" value="reset"/>
                                 <br>
-                                <a href="index2.php"><p class="small">quay lại trang chủ</p></a>
+                                <a href="index.php"><p class="small">quay lại trang chủ</p></a>
                                 </div>
                             </div>
                         </div>

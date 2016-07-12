@@ -135,7 +135,7 @@
             $sotrang = ceil($tongdong/$limit);
             $trangtruoc = $page - 1;
             $trangsau = $page + 1;
-            $hientrang ="<div class='pagination' style='clear: both;'><ul class='pagination'>";
+            $hientrang ="<div class='pagination span12' style='clear: both;'><ul class='pagination'>";
             if($page>1){
             $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' ><</a></li>";
             }
@@ -158,7 +158,7 @@
             $sotrang = ceil($tongdong/$limit);
             $trangtruoc = $page - 1;
             $trangsau = $page + 1;
-            $hientrang ="<div class='pagination' style='clear: both;'><ul class='pagination'>";
+            $hientrang ="<div class='pagination span12' style='clear: both;'><ul class='pagination'>";
             if($page>1){
             $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' >Prev</a></li>";
             }
@@ -207,7 +207,7 @@
             <?php
             $html = ob_get_clean();
             echo $html;
-            header('location:index2.php');
+            header('location:index.php');
             }
             else {
                 $err = 'mật khẩu không đúng';

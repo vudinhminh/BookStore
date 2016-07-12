@@ -50,12 +50,7 @@ width: 280px;
  .top-nav2 {
 text-align:center;
 }
-.search-bar {
-float: none;
-margin: 0 auto 20px;
-overflow: hidden;
-width: 305px;
-}
+.search-bar {float: none;margin: 0 auto 20px;overflow: hidden;width: 100%;}
 .featured-author .right {float: none; overflow: hidden; width: 90%;}
 .f2-img-list li .right{ float:left;}
 .author-det { overflow: hidden; width: 55%;}

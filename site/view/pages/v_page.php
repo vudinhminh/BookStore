@@ -1,4 +1,4 @@
-<div class="blog-footer">
+<div class="blog-footer span12">
                         <div class="pagination">
                             <ul>
                                 <li><a href="#">Prev</a></li>

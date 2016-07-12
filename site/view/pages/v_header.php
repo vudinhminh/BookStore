@@ -1,10 +1,8 @@
 <?php
     session_start();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-    <!-- Tieu Long Lanh Kute -->
+<!DOCTYPE HTML>
+<html>
     <head>
         <title>Minh Vũ</title>
         <meta http-equiv="cache-control" content="no-cache"/>
@@ -13,23 +11,12 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
         <meta name="viewport" content="width=device-width"/>
         <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
         <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/style1.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/bs.css" rel="stylesheet" type="text/css"/> 
-        
-        <!--<link rel="stylesheet" type="text/css" href="css/main-slider.css"/>--> 
         <link href="public/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <!--<link href="css/font-awesome-ie7.css" rel="stylesheet" type="text/css"/>--> 
-        <noscript>
-            <!--<link rel="stylesheet" type="text/css" href="css/noJS.css"/>-->
-        </noscript>
-        
-        <!--<link href="css/switcher.css" rel="stylesheet" type="text/css"/>-->
-        <!--<link rel="stylesheet" name="skins" href="css/default.css" type="text/css" media="all">-->
     </head>
 <body>
-
     <div class="wrapper">
         <header id="main-header">
             <section class="container-fluid container">
@@ -58,7 +45,6 @@
                     </section>
                 </section>
             </section>
-
             <nav id="nav">
                 <nav class="navbar o">
                     <div class="container-fluid">
@@ -71,7 +57,6 @@
                       </ul>
                     </div>
                 </nav>
-              
             </nav>
         </header>
         <section id="content-holder" class="container-fluid container">
