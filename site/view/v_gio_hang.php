@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xs-12" style="padding-right: 30px;">
+                            <div class="col-md-6 col-xs-12">
                                 <div class="form-group">
                                     <label class="col-md-5 control-label">Địa chỉ (*)</label>
                                     <div class="col-md-7">
@@ -83,14 +83,11 @@
                                         <textarea  name="txtGhiChu" ></textarea>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                             <div class="col-md-12" style="padding-right: 30px;">
                                 <div class="form-group">
                                     <div class="col-xs-5 col-xs-offset-5">
                                         <input type="submit" class="btn btn-info" value="Đặt hàng"/>
-                                        <input type="reset" class="btn btn-default" value="reset"/>
                                     </div>
                                 </div>
                             </div>

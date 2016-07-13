@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8"/>
 	<title>Đăng nhập</title>
         <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link rel="stylesheet" href="public/css/animate.css">
+	<link rel="stylesheet" href="public/css/animate.css"/>
 	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="public/css/style2.css">
+	<link rel="stylesheet" href="public/css/style2.css"/>
 	<script src="public/js/jquery-2.2.4.min.js"></script>
         <script src="public/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="public/js/formValidation.min1.js" type="text/javascript"></script>
@@ -17,8 +17,8 @@
 
 <body>
 	<div class="container">
-		
-            <div  class="login-box animated fadeInUp form-horizontal" style="max-width:340px">
+            <div class="col-md-12">
+            <div  class="login-box animated fadeInUp form-horizontal " style="max-width:340px">
                 <form id="enableForm2" action="login.php?dn=XLLogin" method="POST" >
 			<div class="box-header">
 				<h2>Đăng nhập</h2>
@@ -43,6 +43,7 @@
                         <a href="login.php?dn=register"><p class="small">Đăng ký</p></a>
                         
                 </form>
+            </div>
             </div>
 	</div>
 </body>

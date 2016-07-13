@@ -10,27 +10,27 @@
         <div class="span6 c-form-holder first">
             <h3>Nhập thông tin liên hệ</h3>
             <form class="form-horizontal" method="post">
-                <div class="control-group">
+                <div class="control-group col-xs-12">
                     <label class="control-label" for="inputEmail">Tên <sup>*</sup></label>
-                    <div class="controls">
+                    <div class="controls col-xs-12">
                         <input type="text" name="name" id="inputEmail" placeholder="">
                     </div>
                 </div>
-                <div class="control-group">
+                <div class="control-group col-xs-12">
                     <label class="control-label" for="inputPassword">Email <sup>*</sup></label>
-                    <div class="controls">
+                    <div class="controls col-xs-12">
                         <input type="text" name="email" id="inputPassword" placeholder="">
                     </div>
                 </div>
-                <div class="control-group">
+                <div class="control-group col-xs-12">
                     <label class="control-label" for="inputPassword">Tiêu đề <sup>*</sup></label>
-                    <div class="controls">
+                    <div class="controls col-xs-12">
                         <input type="text" name="subject" id="inputPassword" placeholder="">
                     </div>
                 </div>
-                <div class="control-group">
+                <div class="control-group col-xs-12">
                     <label class="control-label" for="inputPassword">Tin nhắn <sup>*</sup></label>
-                    <div class="controls">
+                    <div class="controls  col-md-8 col-xs-11">
                         <textarea name="comments" id="comments_area" cols="2" rows="20"></textarea>
                     </div>
                 </div>

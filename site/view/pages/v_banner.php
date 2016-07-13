@@ -5,4 +5,3 @@
         <div class="slide"><a ><img src="public/images/banner1.jpg" alt=""/></a></div>
     </div>
 </div>
-<hr>

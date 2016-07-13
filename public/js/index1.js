@@ -46,6 +46,9 @@ $(document).ready(function() {
                 }
                 
             }
-        })
+        });
+    $('#menu1').click(function (){
+        $(".menu1").toggle();
+    });
         
 });

@@ -166,6 +166,27 @@ body{
 #logo img{
     width: 100% !important;
 }
+#menu1{
+        display: none;
+    }
+@media (max-width: 700px) {
+    #menu1{
+        display: block;
+    }
+    #menu1 li{
+        display: block !important;
+    }
+    .menu1{
+        display: none;
+    }
+    .navbar .nav>li {
+    float: none !important;
+    }
+    .nav{
+        width: 100%;
+    }
+    
+}
 @media (max-width: 500px) {
     .table_gio_hang {
         width: 100%;
@@ -186,3 +207,52 @@ body{
 textarea{
         height: 100px !important;
     }
+@media (max-width: 500px) {
+    .blog-sec-slider {
+    margin: 0px !important;
+    }
+    #main-header {
+    padding: 0px !important; 
+    margin: 0px !important;
+    }
+/*    .bx-wrapper{
+        height: 40px !important;
+    }*/
+  .bx-wrapper img{
+        height: 120px !important;
+    }
+/*    .container {
+        width: 100% !important;
+    }*/
+    .giamoi_chitiet{
+        font-size: 22px;
+    }
+    .comm-nav{
+        margin-top: 0px;
+    }
+    .book-i-caption{
+        margin-bottom: 0px;
+    }
+    .footer-top1{
+        padding: 15px 0 0 0px;
+    }
+    textarea{
+        height: 60px !important;
+        min-height: 60px !important; 
+    }
+    
+    /*    .related-book .slide {
+        width: 148px !important;
+    }*/
+/*    .span4 {
+        margin: 0;
+    }*/
+/*    .features-books .slide {
+        width: 50% !important;
+        float: left;
+        min-height: 310px;
+    }
+    .grid-holder img {
+        height: 150px;
+    }*/
+}

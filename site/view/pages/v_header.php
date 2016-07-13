@@ -11,10 +11,10 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
         <meta name="viewport" content="width=device-width"/>
         <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/style1.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/bs.css" rel="stylesheet" type="text/css"/> 
         <link href="public/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
 <body>
     <div class="wrapper">
@@ -38,28 +38,33 @@
                             ?>
                             <li><a href="?cn=giohang">Giỏ hàng <i class="fa fa-shopping-cart" aria-hidden="true"></i><span style="color: red">(<?php echo $so_luong_hang = isset($_SESSION['giohang'])?count($_SESSION['giohang']):0; ?>)</span></a></li>
                         </ul>
-                        <div class="search-bar">
-                            <input name="" type="text" style="height: 35px;" placeholder="Tìm kiếm" />
-                            <input name="" type="button" class="form-control" value="Tìm kiếm"/>
+                        <div class="col-xs-12 ">
+                           
+                            <input class="col-md-6 col-xs-10" name="" type="text" style="" placeholder="Tìm kiếm" />
+                            <button class="btn btn-info" type="submit" style="height: 35px;"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                     </section>
                 </section>
             </section>
+            <i id="menu1" style="font-size: 23px;background-color: #E5E5E5;height: 40px;line-height: 40px; width: 40px; text-align: center  " class="fa fa-bars" aria-hidden="true"></i>
+     
             <nav id="nav">
-                <nav class="navbar o">
+                <nav class="navbar menu1">
                     <div class="container-fluid">
                       <ul class="nav navbar-nav">
                         <li> <a href="?cn=home">Trang chủ</a> </li>
-                            <li><a href="?cn=home&method=gioithieu">Giới thiệu</a></li>
-                            <li><a href="?cn=khuyenmai">Khuyến mãi</a></li>
-                            <li><a href="?cn=hotro">Hỗ trợ khách hàng</a></li>
-                            <li><a href="?cn=home&method=lienhe">Liên hệ & Địa chỉ</a></li>
+                        <li><a href="?cn=home&method=gioithieu">Giới thiệu</a></li>
+                        <li><a href="?cn=khuyenmai">Khuyến mãi</a></li>
+                        <li><a href="?cn=hotro">Hỗ trợ khách hàng</a></li>
+                        <li><a href="?cn=home&method=lienhe">Liên hệ & Địa chỉ</a></li>
                       </ul>
+                        
                     </div>
                 </nav>
+                
             </nav>
         </header>
+        
         <section id="content-holder" class="container-fluid container">
             <section class="row-fluid">
-                <div class="heading-bar">
-                </div>
+                
