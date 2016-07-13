@@ -46,7 +46,9 @@
                     </section>
                 </section>
             </section>
-            <i id="menu1" style="font-size: 23px;background-color: #E5E5E5;height: 40px;line-height: 40px; width: 40px; text-align: center  " class="fa fa-bars" aria-hidden="true"></i>
+                  <button id="menu1" style="font-size: 23px;background-color: #E5E5E5;height: 40px;line-height: 40px; width: 40px; text-align: center  " class="navbar-toggler pull-xs-right hidden-sm-up collapsed" type="button" data-toggle="collapse" data-target=".menu1" aria-expanded="false">
+                    ☰
+                  </button>
      
             <nav id="nav">
                 <nav class="navbar menu1">

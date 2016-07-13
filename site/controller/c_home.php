@@ -7,7 +7,7 @@ class C_home{
     } 
     function Danh_sach_tac_gia(){
         $danh_sach_tac_gia = new M_database();
-        $row = $danh_sach_tac_gia->GetLimit('TacGia',5);
+        $row = $danh_sach_tac_gia->GetLimit('tacgia',5);
         return $row;
     } 
     function Danh_sach_sach_xem_nhieu(){
