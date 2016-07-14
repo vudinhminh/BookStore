@@ -22,7 +22,7 @@
                                 <td class="center1"><img src="upload/<?php echo $val['hinhanh'] ?>"/></td>
                                 <td><?php echo $val['tensach'] ?></td>
                                 <td class="center1"><?php echo number_format($val['dongia'],0,'.',',') ?></td>
-                                <td class="center1" ><input class="soluong1" name="txtSoLuong[<?php echo  $val['id']?>]" size="2" type="text" value="<?php echo  $val['soluong']?>"/></td>
+                                <td class="center1" ><input class="soluong1" required pattern="[0-9]{1,3}" title="Số lượng phải là chữ số và nhỏ hơn 4 kí tự" name="txtSoLuong[<?php echo  $val['id']?>]" size="2" type="text" value="<?php echo  $val['soluong']?>"/></td>
                                 <td  class="center1 img_gio_hang"><?php echo number_format($val['dongia']*$val['soluong'],0,'.',',') ?></td>
                                 <td ><a href="?cn=giohang&method=xoa&id_xoa=<?php echo  $val['id']?>"> <i class="icon-trash"></i></a></td>
                             </tr>

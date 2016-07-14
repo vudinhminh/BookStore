@@ -27,7 +27,7 @@
                     <div class="comm-nav">
                         <strong class="title2">Số lượng mua</strong>
                         <ul><form method="POST" action="?cn=giohang&method=XL_gio_hang&id_them=<?php echo $row['id'] ?>">
-                            <li><input name="txtSoLuong" class="txtSoLuong" type="text" value="1"/></li>
+                                <li><input name="txtSoLuong" class="txtSoLuong" type="text" value="1" required pattern="[0-9]{1,3}" title="Số lượng phải là số và nhỏ hơn 4 kí tự"/></li>
                             <li><input type="submit" value="Thêm vào giỏ hàng" class="more-btn"/></li>
                             </form>
                         </ul>

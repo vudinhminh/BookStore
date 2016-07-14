@@ -86,6 +86,7 @@
                                     <input type="reset" class="btn btn-default" value="reset"/>
                                 <br>
                                 <a href="index.php"><p class="small">quay lại trang chủ</p></a>
+                                <a href="login.php"><p class="small">Đăng nhập</p></a>
                                 </div>
                             </div>
                         </div>

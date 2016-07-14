@@ -41,6 +41,7 @@
                             <input type="reset" class="btn btn-default" value="reset"/>
                         </div>
                         <a href="login.php?dn=register"><p class="small">Đăng ký</p></a>
+                        <a href="index.php"><p class="small">Quay lại trang chủ</p></a>
                         
                 </form>
             </div>
