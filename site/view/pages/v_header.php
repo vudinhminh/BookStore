@@ -31,8 +31,8 @@ session_start();
                                     echo "<li class'dangnhap2'><a>Xin chào " . $_SESSION['user']['name'] . "</a></li><li><a href='login.php?dn=XLDangXuat'>Đăng xuất</a></li>";
                                 } else {
                                     ?>
-                                    <li><a href="login.php">Đăng nhập</a></li>
-                                    <li><a href="login.php?dn=register">Đăng kí</a></li>
+                                    <li><a href="login.html">Đăng nhập</a></li>
+                                    <li><a href="login.html?dn=register">Đăng kí</a></li>
                                     <?php
                                 }
                                 ?>
