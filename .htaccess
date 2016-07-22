@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^index.html$ index.php
+RewriteRule ^login.html$ login.php
+RewriteRule ^trang/([0-9+])$ page.php?id=$1
