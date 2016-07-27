@@ -1,4 +1,5 @@
 <?php
+include_once 'config.php';
 include_once 'site/model/m_database.php';
 class C_login{
     function Login(){

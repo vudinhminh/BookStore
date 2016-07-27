@@ -4,22 +4,22 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Đăng nhập</title>
-        <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link rel="stylesheet" href="public/css/animate.css"/>
+        <link href="<?php echo FULL_SITE_ROOT ?>public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>public/css/animate.css"/>
 	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="public/css/style2.css"/>
-	<script src="public/js/jquery-2.2.4.min.js"></script>
-        <script src="public/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="public/js/formValidation.min1.js" type="text/javascript"></script>
-        <script src="public/js/formValidation.min2.js" type="text/javascript"></script>
-        <script src="public/js/index.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>public/css/style2.css"/>
+	<script src="<?php echo FULL_SITE_ROOT ?>public/js/jquery-2.2.4.min.js"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/formValidation.min1.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/formValidation.min2.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/index.js" type="text/javascript"></script>
 </head>
 
 <body>
 	<div class="container">
             <div class="col-md-12">
             <div  class="login-box animated fadeInUp form-horizontal " style="max-width:340px">
-                <form id="enableForm2" action="login.php?dn=XLLogin" method="POST" >
+                <form id="enableForm2" action="login/XLLogin" method="POST" >
 			<div class="box-header">
 				<h2>Đăng nhập</h2>
 			</div>
@@ -40,8 +40,8 @@
                             <input type="submit" class="btn btn-info" value="Đăng nhập"/>
                             <input type="reset" class="btn btn-default" value="reset"/>
                         </div>
-                        <a href="login.php?dn=register"><p class="small">Đăng ký</p></a>
-                        <a href="index.php"><p class="small">Quay lại trang chủ</p></a>
+                        <a href="login?dn=register"><p class="small">Đăng ký</p></a>
+                        <a href="index"><p class="small">Quay lại trang chủ</p></a>
                         
                 </form>
             </div>

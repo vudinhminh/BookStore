@@ -202,7 +202,7 @@
                 $_SESSION['user']['sdt']=$row['SDT'];
                 $_SESSION['user']['email']=$row['Email'];
                 $_SESSION['user']['diachi']=$row['DiaChi'];
-                header('location:index.php');
+                header('location:index');
             }
             else {
                 $err = 'mật khẩu không đúng';

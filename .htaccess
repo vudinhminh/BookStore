@@ -1,4 +1,15 @@
 RewriteEngine on
-RewriteRule ^index.html$ index.php
-RewriteRule ^login.html$ login.php
+RewriteRule ^index$ index.php
+RewriteRule ^login$ login.php
+RewriteRule ^home$ ?cn=home
+RewriteRule ^gioithieu$ ?cn=home&method=gioithieu
+RewriteRule ^khuyenmai$ ?cn=home&cn=khuyenmai
+RewriteRule ^hotro$ ?cn=home&cn=hotro
+RewriteRule ^lienhe$ ?cn=home&method=lienhe
+RewriteRule ^giohang$ ?cn=giohang
+
+RewriteRule ^login/([a-zA-Z0-9_-]+)$ login.php?dn=$1
+
+RewriteRule ^san-pham/([a-zA-Z0-9_-]+)-([0-9]+).html$ ?page=ct&id=$2
+
 RewriteRule ^trang/([0-9+])$ page.php?id=$1

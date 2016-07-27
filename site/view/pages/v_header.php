@@ -22,21 +22,21 @@ session_start();
                 <section class="container-fluid container">
                     <section class="row-fluid">
                         <section class="span4">
-                            <h1 id="logo"> <a href="?cn=home"><img src="public/images/logo.png"/></a> </h1>
+                            <h1 id="logo"> <a href="home"><img src="public/images/logo.png"/></a> </h1>
                         </section>
                         <section class="span8">
                             <ul class="top-nav2">
                                 <?php
                                 if (isset($_SESSION['user'])) {
-                                    echo "<li class'dangnhap2'><a>Xin chào " . $_SESSION['user']['name'] . "</a></li><li><a href='login.php?dn=XLDangXuat'>Đăng xuất</a></li>";
+                                    echo "<li class'dangnhap2'><a>Xin chào " . $_SESSION['user']['name'] . "</a></li><li><a href='login?dn=XLDangXuat'>Đăng xuất</a></li>";
                                 } else {
                                     ?>
-                                    <li><a href="login.html">Đăng nhập</a></li>
-                                    <li><a href="login.html?dn=register">Đăng kí</a></li>
+                                    <li><a href="login">Đăng nhập</a></li>
+                                    <li><a href="login?dn=register">Đăng kí</a></li>
                                     <?php
                                 }
                                 ?>
-                                <li><a href="?cn=giohang">Giỏ hàng <i class="fa fa-shopping-cart" aria-hidden="true"></i><span style="color: red">(<?php echo $so_luong_hang = isset($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0; ?>)</span></a></li>
+                                <li><a href="giohang">Giỏ hàng <i class="fa fa-shopping-cart" aria-hidden="true"></i><span style="color: red">(<?php echo $so_luong_hang = isset($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0; ?>)</span></a></li>
                             </ul>
                             <div class="col-xs-12 ">
 
@@ -53,11 +53,11 @@ session_start();
                     <nav class="navbar menu1">
                         <div class="container-fluid">
                             <ul class="nav navbar-nav">
-                                <li> <a href="?cn=home">Trang chủ</a> </li>
-                                <li><a href="?cn=home&method=gioithieu">Giới thiệu</a></li>
-                                <li><a href="?cn=khuyenmai">Khuyến mãi</a></li>
-                                <li><a href="?cn=hotro">Hỗ trợ khách hàng</a></li>
-                                <li><a href="?cn=home&method=lienhe">Liên hệ & Địa chỉ</a></li>
+                                <li> <a href="home">Trang chủ</a> </li>
+                                <li><a href="gioithieu">Giới thiệu</a></li>
+                                <li><a href="khuyenmai">Khuyến mãi</a></li>
+                                <li><a href="hotro">Hỗ trợ khách hàng</a></li>
+                                <li><a href="lienhe">Liên hệ & Địa chỉ</a></li>
                             </ul>
 
                         </div>
