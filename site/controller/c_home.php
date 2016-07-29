@@ -19,7 +19,7 @@ class C_home{
         $ds_loai = $this->Danh_sach_loai();
         $ds_tac_gia = $this->Danh_sach_tac_gia();
         $ds_xem_nhieu = $this->Danh_sach_sach_xem_nhieu();
-        $url = 'book-store';
+        $url = 'book-store-home-0';
         $page = isset($_GET['page'])?$_GET['page']:1;
         $home = new M_database();
         $row = $home->GetAll_Sachpt(9, $page);

@@ -141,16 +141,16 @@
             $trangsau = $page + 1;
             $hientrang ="<div class='pagination span12' style='clear: both;'><ul class='pagination'>";
             if($page>1){
-            $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' ><</a></li>";
+            $hientrang.="<li><a href='".$url."-".$trangtruoc."'  data-id='".$trangtruoc."' ><</a></li>";
             }
             for($i=1; $i <= $sotrang;$i++)
             {
                 if($i==$page) $phantrang2 = 'active';
                 else $phantrang2 = '';
-                $hientrang .= " <li class='".$phantrang2."'><a href='".$url."&page=".$i."' data-id='".$i."'>".$i."</a></li> ";
+                $hientrang .= " <li class='".$phantrang2."'><a href='".$url."-".$i."' data-id='".$i."'>".$i."</a></li> ";
             }
             if($page<$sotrang){
-            $hientrang.="<li><a href='".$url."&page=".$trangsau."' data-id='".$trangsau."' >></a></li>";
+            $hientrang.="<li><a href='".$url."-".$trangsau."' data-id='".$trangsau."' >></a></li>";
             }
             $hientrang .="</ul></div>";
             return $hientrang;
@@ -164,16 +164,16 @@
             $trangsau = $page + 1;
             $hientrang ="<div class='pagination span12' style='clear: both;'><ul class='pagination'>";
             if($page>1){
-            $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' >Prev</a></li>";
+            $hientrang.="<li><a href='".$url."-".$trangtruoc."'  data-id='".$trangtruoc."' >Prev</a></li>";
             }
             for($i=1; $i <= $sotrang;$i++)
             {
                 if($i==$page) $phantrang2 = 'active';
                 else $phantrang2 = '';
-                $hientrang .= " <li class='".$phantrang2."'><a href='".$url."&page=".$i."' data-id='".$i."'>".$i."</a></li> ";
+                $hientrang .= " <li class='".$phantrang2."'><a href='".$url."-".$i."' data-id='".$i."'>".$i."</a></li> ";
             }
             if($page<$sotrang){
-            $hientrang.="<li><a href='".$url."&page=".$trangsau."' data-id='".$trangsau."' >Next</a></li>";
+            $hientrang.="<li><a href='".$url."-".$trangsau."' data-id='".$trangsau."' >Next</a></li>";
             }
             $hientrang .="</ul></div>";
             return $hientrang;
@@ -188,16 +188,16 @@
             $trangsau = $page + 1;
             $hientrang ="<div class='pagination span12' style='clear: both;'><ul class='pagination'>";
             if($page>1){
-            $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' >Prev</a></li>";
+            $hientrang.="<li><a href='".$url."-".$trangtruoc."'  data-id='".$trangtruoc."' >Prev</a></li>";
             }
             for($i=1; $i <= $sotrang;$i++)
             {
                 if($i==$page) $phantrang2 = 'active';
                 else $phantrang2 = '';
-                $hientrang .= " <li class='".$phantrang2."'><a href='".$url."&page=".$i."' data-id='".$i."'>".$i."</a></li> ";
+                $hientrang .= " <li class='".$phantrang2."'><a href='".$url."-".$i."' data-id='".$i."'>".$i."</a></li> ";
             }
             if($page<$sotrang){
-            $hientrang.="<li><a href='".$url."&page=".$trangsau."' data-id='".$trangsau."' >Next</a></li>";
+            $hientrang.="<li><a href='".$url."-".$trangsau."' data-id='".$trangsau."' >Next</a></li>";
             }
             $hientrang .="</ul></div>";
             return $hientrang;

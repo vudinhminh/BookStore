@@ -6,6 +6,7 @@ RewriteRule ^login$ login.php [QSA,L]
 RewriteRule ^login-([a-zA-Z0-9_-]+)$ login.php?dn=$1 [QSA,L]
 
 RewriteRule ^book-store$ index.php [QSA,L]
+RewriteRule ^book-store-([a-zA-Z0-9_-]+)-([0-9]+)-([a-zA-Z0-9_-]+)$ ?cn=home&method=$1&id=$2&page=$3 [QSA,L]
 RewriteRule ^book-store-([a-zA-Z0-9_-]+)-([0-9]+)$ ?cn=home&method=$1&id=$2 [QSA,L]
 RewriteRule ^book-store-([a-zA-Z0-9_-]+)$ ?cn=home&method=$1 [QSA,L]
 
