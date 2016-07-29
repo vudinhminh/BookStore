@@ -1,4 +1,4 @@
-<form method="POST" id="loginForm" class="form-horizontal" action="admin.php?sk=nhaxuatban&page=<?php echo $_POST['page'] ?>&method=Them_sua_nha_xuat_ban<?php if(isset($id_sua)) echo '&id_sua='.$id_sua ?>">
+<form method="POST" id="loginForm" class="form-horizontal" action="admin-nhaxuatban-Them_sua_nha_xuat_ban-<?php echo $_POST['page'] ?><?php if(isset($id_sua)) echo '-'.$id_sua ?>">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-4 control-label">Tên NXB</label>
         <div class="col-sm-8">
@@ -21,7 +21,7 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
            <div class="col-sm-offset-2 col-sm-10">
-                <?php if(isset($_POST['id_sua'])){?>
+                <?php if(isset($_POST['id'])){?>
                <button type="submit" name="btnsua" data-id_sua1="<?php if(isset($row_sua['id_nxb'])) echo $row_sua['id_nxb']  ?>" class="btn btn-default sua_nha_xuat_ban1">Sửa</button>
                 <?php }else{ ?>
                <button type="submit" name="btnthem" class="btn btn-default them_nha_xuat_ban1">Thêm</button>

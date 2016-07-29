@@ -92,16 +92,16 @@
             $trangsau = $page + 1;
             $hientrang ="<div class='phantrang'><ul class='pagination'>";
             if($page>1){
-            $hientrang.="<li><a href='?sk=".$table."&method=Hien&page=".$trangtruoc."'  data-id='".$trangtruoc."' class='  pt".$table."'><</a></li>";
+            $hientrang.="<li><a href='admin-".$table."-Hien-".$trangtruoc."'  data-id='".$trangtruoc."' class='  pt".$table."'><</a></li>";
             }
             for($i=1; $i <= $sotrang;$i++)
             {
                 if($i==$page) $phantrang2 = 'active';
                 else $phantrang2 = '';
-                $hientrang .= " <li class='".$phantrang2."'><a href='?sk=".$table."&method=Hien&page=".$i."' data-id='".$i."' class=' pt".$table."'>".$i."</a></li> ";
+                $hientrang .= " <li class='".$phantrang2."'><a href='admin-".$table."-Hien-".$i."' data-id='".$i."' class=' pt".$table."'>".$i."</a></li> ";
             }
             if($page<$sotrang){
-            $hientrang.="<li><a href='?sk=".$table."&method=Hien&page=".$trangsau."' data-id='".$trangsau."' class=' pt".$table."'>></a></li>";
+            $hientrang.="<li><a href='admin-".$table."-Hien-".$trangsau."' data-id='".$trangsau."' class=' pt".$table."'>></a></li>";
             }
             $hientrang .="</ul></div>";
             echo $hientrang;
@@ -121,8 +121,10 @@
                 $err = 'Tên đăng nhập chưa đúng';
             }
             elseif($dem2>0&&$quyen==1){
-                $_SESSION['admin']=$row['TenHienThi']; 
-                header('location:admin.php');
+                $_SESSION['admin']['tenhienthi']=$row['TenHienThi']; 
+                $_SESSION['admin']['matkhau']=$row['MatKhau']; 
+                $_SESSION['admin']['tendangnhap']=$row['TenDangNhap']; 
+                header('location:admin.html');
             }
             else {
                 $err = 'mật khẩu không đúng';
@@ -130,15 +132,9 @@
             return $err;
 
         }
+        function DoiMK($matkhau,$tendangnhap){
+            $sql="update taikhoan set MatKhau='".$matkhau."' where TenDangNhap ='".$tendangnhap."'";
+            mysqli_query($this->__conn, $sql);
+        }
         
     }
-       // $tenloai='minh';
-	//$them_loai_sach = new M_database();
-       // $them_loai_sach->Insert('loaisach', array('TenLoai'=>$tenloai));
-    
-//    $a=new M_database();
-//    $result=$a->GetAll_Sach_Idsach('3');
-//    echo '<pre>';
-//    print_r($result);
-//    echo "</pre>";
-

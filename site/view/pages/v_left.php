@@ -13,22 +13,22 @@
                     <?php
                     foreach ($ds_loai as $val){
                     ?>
-                    <li><a href="?cn=home&method=Sach_theo_loai&id=<?php echo $val['id_loai'] ?>"><?php echo $val['TenLoai'] ?></a></li>
+                    <li><a href="book-store-Sach_theo_loai-<?php echo $val['id_loai'] ?>"><?php echo $val['TenLoai'] ?></a></li>
                     <?php } ?>
                 </ul>
                 
                 <strong class="title">Giá</strong>
                 <ul class="side-list">
-                    <li><a href="?cn=home&method=Sach_theo_gia&id=1">Từ 0đ - 500,000đ</a></li>
-                    <li><a href="?cn=home&method=Sach_theo_gia&id=2">Từ 500,000đ - 1,000,000đ</a></li>
-                    <li><a href="?cn=home&method=Sach_theo_gia&id=3">Lớn hơn 1,000,000đ</a></li>
+                    <li><a href="book-store-Sach_theo_gia-1">Từ 0đ - 500,000đ</a></li>
+                    <li><a href="book-store-Sach_theo_gia-2">Từ 500,000đ - 1,000,000đ</a></li>
+                    <li><a href="book-store-Sach_theo_gia-3">Lớn hơn 1,000,000đ</a></li>
                 </ul>
                 <strong class="title">Tác giả</strong>
                 <ul class="side-list">
                     <?php
                     foreach ($ds_tac_gia as $val1){
                     ?>
-                    <li><a href="?cn=home&method=Sach_theo_tac_gia&id=<?php echo $val1['id_tg'] ?>"><?php echo $val1['TenTG'] ?></a></li>
+                    <li><a href="book-store-Sach_theo_tac_gia-<?php echo $val1['id_tg'] ?>"><?php echo $val1['TenTG'] ?></a></li>
                     <?php } ?>
                 </ul>
             </div>
@@ -45,12 +45,12 @@
                 ?>
                 <article class="r-post sach_xem_nhieu">
                     <div class="r-img-title">
-                        <a href="?cn=home&method=chitiet&id=<?php echo $val['id']?>"><img src="upload/<?php echo $val['HinhAnh'] ?>"/></a>
+                        <a href="book-store-chitiet-<?php echo $val['id']?>"><img src="upload/<?php echo $val['HinhAnh'] ?>"/></a>
                         <div class="r-det-holder span6">
-                            <strong class="r-author">Tên sách: <a href="??cn=home&method=chitiet&id=<?php echo $val['id']?>"><?php echo $val['TenSach'] ?></a></strong>
+                            <strong class="r-author">Tên sách: <a href="book-store-chitiet-<?php echo $val['id']?>"><?php echo $val['TenSach'] ?></a></strong>
                         </div>
                         <div class="r-det-holder span6">
-                            <span class="r-by">Tên tác giả:<a href="?cn=home&method=Sach_theo_tac_gia&id=<?php echo $val['id_tg'] ?>"><?php echo $val['TenTG'] ?></a></span>
+                            <span class="r-by">Tên tác giả:<a href="book-store-Sach_theo_tac_gia-<?php echo $val['id_tg'] ?>"><?php echo $val['TenTG'] ?></a></span>
                             <span class="r-by">Giá: <?php echo number_format($val['GiaMoi'],0,'.',',') ?>đ</span>
                             <span class="r-by">Số lượt xem: <?php echo $val['SoLuotXem'] ?></span>
                         </div>

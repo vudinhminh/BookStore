@@ -1,4 +1,4 @@
-<form method="POST" id="loginForm" class="form-horizontal" action="admin.php?sk=donhang&page=<?php echo $_POST['page'] ?>&method=Them_don_hang">
+<form method="POST" id="loginForm" class="form-horizontal" action="admin-donhang-Them_don_hang-<?php echo $_POST['page'] ?>">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-4 control-label">Tên Khách hàng</label>
         <div class="col-sm-8">

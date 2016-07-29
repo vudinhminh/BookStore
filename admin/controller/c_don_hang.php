@@ -25,15 +25,15 @@
                 $arr =array('TenKH'=>$tenkh,'Email'=>$email,'SDT'=>$sdt,'DiaChi'=>$diachi,'GhiChu'=>$ghichu,'ThanhTien'=>0,'NgayDat'=>$ngay,'TrangThai'=>$trangthai);
                 $them_nha_xuat_ban = new M_database();
                 $them_nha_xuat_ban->Insert('donhang', $arr);
-                header('location:admin.php?sk=donhang&method=Hien&page='.$page);
+                header('location:admin-donhang-Hien-'.$page);
             }
         }
         function Hien_sua_don_hang(){
             include_once '../view/v_sua_don_hang.php';
         }
         function Xoa_don_hang(){
-            if(isset($_POST['id_xoa'])){
-                $id_xoa = $_POST['id_xoa'];
+            if(isset($_POST['id'])){
+                $id_xoa = $_POST['id'];
                 include_once '../model/m_database.php';
                  $xoa = new M_database();
                  $xoa->Delete('donhang', 'id_hd', $id_xoa);

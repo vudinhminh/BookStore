@@ -16,7 +16,7 @@
         }
         function Hien_sua_sach(){
             include_once '../model/m_database.php';
-            $id_sua = isset($_POST['id_sua'])? $_POST['id_sua'] : 0;
+            $id_sua = isset($_POST['id'])? $_POST['id'] : 0;
             if($id_sua > 0){
                 $where = 'id='.$id_sua;
                 
@@ -37,9 +37,9 @@
             include_once '../view/v_sua_sach.php';
         }
         function Xoa_sach(){
-            if(isset($_POST['id_xoa']))
+            if(isset($_POST['id']))
             {
-                $id_xoa = $_POST['id_xoa'];
+                $id_xoa = $_POST['id'];
                 include_once '../model/m_database.php';
                 $xoa_sach1 = new M_database();
                 $xoa_sach1->Delete('sach', 'id', $id_xoa);
@@ -58,20 +58,14 @@
                     if($_FILES['file']['type'] == "image/jpeg"
                     || $_FILES['file']['type'] == "image/png"
                     || $_FILES['file']['type'] == "image/gif"){
-                    // là file ảnh
-                    // Tiến hành code upload    
-                        if($_FILES['file']['size'] > 1048576){
-                            echo "File không được lớn hơn 1mb";
-                        }else{
-                            // file hợp lệ, tiến hành upload
-                            $path = "../upload/"; // file sẽ lưu vào thư mục data
-                            $tmp_name = $_FILES['file']['tmp_name'];
-                            $name = $_FILES['file']['name'];
-                            $type = $_FILES['file']['type']; 
-                            $size = $_FILES['file']['size']; 
-                            // Upload file
-                            move_uploaded_file($tmp_name,$path.$name);
-                       }
+                    $path = "../upload/"; // file sẽ lưu vào thư mục data
+                    $tmp_name = $_FILES['file']['tmp_name'];
+                    $name = $_FILES['file']['name'];
+                    $type = $_FILES['file']['type']; 
+                    $size = $_FILES['file']['size']; 
+                    // Upload file
+                    move_uploaded_file($tmp_name,$path.$name);
+                       
                     }else{
                        // không phải file ảnh
                        echo "Kiểu file không hợp lệ";
@@ -86,11 +80,13 @@
                 $arraysach=array('TenSach'=>$TenSach,'id_nxb'=>$NXB,'id_tg'=>$TacGia,'HinhAnh'=>$name,'GiaCu'=>$giacu,'GiaMoi'=>$Gia,'id_loai'=>$LoaiSach,'SoLuong'=>$SoLuong,'SoTrang'=>$SoTrang);
                 $them_sach = new M_database();
                 $them_sach->Insert('sach', $arraysach);
-                header('location:admin.php?sk=sach&method=Hien&page='.$page);
+                header('location:admin-sach-Hien-'.$page);
+                
+                
 
             }
             if(isset($_POST['btn_sua_sach'])){
-                $id_sua_sach = $_GET['id_sua_sach1'];
+                $id_sua_sach = $_GET['id'];
                 $TenSach=$_POST['txtTenSach'];
                 $NXB=$_POST['txtNXB'];
                 $TacGia=$_POST['txtTG'];
@@ -101,20 +97,14 @@
                     if($_FILES['file1']['type'] == "image/jpeg"
                     || $_FILES['file1']['type'] == "image/png"
                     || $_FILES['file1']['type'] == "image/gif"){
-                    // là file ảnh
-                    // Tiến hành code upload    
-                        if($_FILES['file1']['size'] > 1048576){
-                            echo "File không được lớn hơn 1mb";
-                        }else{
                             // file hợp lệ, tiến hành upload
-                            $path = "../upload/"; // file sẽ lưu vào thư mục data
-                            $tmp_name = $_FILES['file1']['tmp_name'];
-                            $name = $_FILES['file1']['name'];
-                            $type = $_FILES['file1']['type']; 
-                            $size = $_FILES['file1']['size']; 
-                            // Upload file
-                            move_uploaded_file($tmp_name,$path.$name);
-                       }
+                    $path = "../upload/"; // file sẽ lưu vào thư mục data
+                    $tmp_name = $_FILES['file1']['tmp_name'];
+                    $name = $_FILES['file1']['name'];
+                    $type = $_FILES['file1']['type']; 
+                    $size = $_FILES['file1']['size']; 
+                    // Upload file
+                    move_uploaded_file($tmp_name,$path.$name);
                     }else{
                        // không phải file ảnh
                        echo "Kiểu file không hợp lệ";
@@ -131,7 +121,7 @@
                     { $name=$rowhiengia['HinhAnh'];}
                 $arraysach=array('TenSach'=>$TenSach,'id_nxb'=>$NXB,'id_tg'=>$TacGia,'HinhAnh'=>$name,'GiaCu'=>$giacu,'GiaMoi'=>$Gia,'id_loai'=>$LoaiSach,'SoLuong'=>$SoLuong,'SoTrang'=>$SoTrang);
                 $sua_sach->Update('sach', $arraysach, 'id', $id_sua_sach);
-                header('location:admin.php?sk=sach&method=Hien&page='.$page);
+                header('location:admin-sach-Hien-'.$page);
               
             }
         }

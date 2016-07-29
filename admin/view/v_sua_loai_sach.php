@@ -1,4 +1,4 @@
-<form id="loginForm" class="form-horizontal" action="?sk=loaisach&method=Them_sua_loai&page=<?php echo $page ?>&id_sua1=<?php if(isset($tenloai)) echo $id_sua; else echo '0' ?>"  method="POST" >
+<form id="loginForm" class="form-horizontal" action="admin-loaisach-Them_sua_loai-<?php echo $page ?><?php if(isset($tenloai)) echo '-'.$id_sua;?>"  method="POST" >
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-4 control-label">Tên Loại</label>
         <div class="col-sm-8">

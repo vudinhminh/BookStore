@@ -19,7 +19,7 @@ class C_home{
         $ds_loai = $this->Danh_sach_loai();
         $ds_tac_gia = $this->Danh_sach_tac_gia();
         $ds_xem_nhieu = $this->Danh_sach_sach_xem_nhieu();
-        $url = '?cn=home&method=Home';
+        $url = 'book-store';
         $page = isset($_GET['page'])?$_GET['page']:1;
         $home = new M_database();
         $row = $home->GetAll_Sachpt(9, $page);
@@ -56,7 +56,7 @@ class C_home{
         $ds_loai = $this->Danh_sach_loai();
         $ds_tac_gia = $this->Danh_sach_tac_gia();
         $ds_xem_nhieu = $this->Danh_sach_sach_xem_nhieu();
-        $url = '?cn=home&method=Sach_theo_loai&id='.$id_loai;
+        $url = 'book-store-Sach_theo_loai-'.$id_loai;
         $page = isset($_GET['page'])?$_GET['page']:1;
         $home = new M_database();
         $row = $home->GetAll_Sach_IdLoai($id_loai,9, $page);
@@ -70,7 +70,7 @@ class C_home{
         $ds_loai = $this->Danh_sach_loai();
         $ds_tac_gia = $this->Danh_sach_tac_gia();
         $ds_xem_nhieu = $this->Danh_sach_sach_xem_nhieu();
-        $url = '?cn=home&method=Sach_theo_tac_gia&id='.$id;
+        $url = 'book-store-Sach_theo_tac_gia-'.$id;
         $page = isset($_GET['page'])?$_GET['page']:1;
         $home = new M_database();
         $row = $home->GetAll_Sach_IdTacGia($id,9, $page);
@@ -92,13 +92,28 @@ class C_home{
         $ds_loai = $this->Danh_sach_loai();
         $ds_tac_gia = $this->Danh_sach_tac_gia();
         $ds_xem_nhieu = $this->Danh_sach_sach_xem_nhieu();
-        $url = '?cn=home&method=Sach_theo_gia&id='.$id;
+        $url = 'book-store-Sach_theo_gia-'.$id;
         $page = isset($_GET['page'])?$_GET['page']:1;
         $home = new M_database();
         $row = $home->GetAll_Sach_gia($where,9, $page);
         $row1 = $where;
         $phan_trang = $home->PhanTrangLoai($url, 9, $page,$where);
         include_once 'site/view/v_home.php';
+    }
+    function Search(){
+        $search = $_POST['txtsearch'];
+        $ds_loai = $this->Danh_sach_loai();
+        $ds_tac_gia = $this->Danh_sach_tac_gia();
+        $ds_xem_nhieu = $this->Danh_sach_sach_xem_nhieu();
+        $url = 'book-store-Search';
+        $page = isset($_GET['page'])?$_GET['page']:1;
+        $home = new M_database();
+        $row = $home->GetAll_Seach($search,9, $page);
+        //print_r($row);
+        $phan_trang = $home->PhanTrangSeach($search,$url, 9, $page);
+        $row1['TenLoai']="Tìm theo tên sách: ' $search '";
+        include_once 'site/view/v_home.php';
+        
     }
 }
 $method = isset($_GET['method'])?$_GET['method']:'Home';

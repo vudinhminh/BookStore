@@ -15,30 +15,30 @@
         function Them_sua_loai(){
             $page = $_GET['page'];
             if(isset($_POST['btnsua'])){
-                $id_sua1 = $_GET['id_sua1'];
+                $id_sua1 = $_GET['id'];
                 $ten = $_POST['txtTenLoai'];
                 $sua = new M_database();
                 $sua->Update('loaisach', array('TenLoai'=>$ten), 'id_loai', $id_sua1);
-                header('Location:admin.php?sk=loaisach&method=Hien&page='.$page);
+                header('Location:admin-loaisach-Hien-'.$page);
             }
             if(isset($_POST['btnthem'])){
                 $ten_loai = $_POST['txtTenLoai'];
                 $them_loai_sach = new M_database();
                 $them_loai_sach->Insert('loaisach', array('TenLoai'=>$ten_loai));
-                header('Location:admin.php?sk=loaisach&method=Hien&page='.$page);
+                header('Location:admin-loaisach-Hien-'.$page);
             }
         }
         function Xoa_loai(){
-            if(isset($_POST['id_xoa'])){
-                $id_xoa_loai = $_POST['id_xoa'];
+            if(isset($_POST['id'])){
+                $id_xoa_loai = $_POST['id'];
                 include_once '../model/m_database.php';
                 $xoa_loai_sach = new M_database();
                 $xoa_loai_sach->Delete('loaisach', 'id_loai', $id_xoa_loai);
             }
         }
         function Hien_sua_loai(){
-            $page= $_POST['page1'];
-            $id_sua = isset($_POST['id_sua'])? $_POST['id_sua']: 0;
+            $page= $_POST['page'];
+            $id_sua = isset($_POST['id'])? $_POST['id']: 0;
             if($id_sua>0){
                 include_once '../model/m_database.php';
                 $hien_sua = new M_database();

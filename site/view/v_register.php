@@ -7,16 +7,17 @@
     <head>
         <meta charset="utf-8">
         <title>Đăng ký</title>
-        <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="public/css/animate.css">
+        <link rel="shortcut icon" href="<?php echo FULL_SITE_ROOT ?>public/images/icon.png" type="image/x-icon" />
+        <link href="<?php echo FULL_SITE_ROOT ?>public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>public/css/animate.css">
         <!-- Custom Stylesheet -->
-        <link rel="stylesheet" href="public/css/style2.css">
+        <link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>public/css/style2.css">
 
-        <script src="public/js/jquery-2.2.4.min.js"></script>
-        <script src="public/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="public/js/formValidation.min1.js" type="text/javascript"></script>
-        <script src="public/js/formValidation.min2.js" type="text/javascript"></script>
-        <script src="public/js/index.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/jquery-2.2.4.min.js"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/formValidation.min1.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/formValidation.min2.js" type="text/javascript"></script>
+        <script src="<?php echo FULL_SITE_ROOT ?>public/js/index.js" type="text/javascript"></script>
 
 
     </head>
@@ -28,7 +29,7 @@
                 <div class="box-header">
                     <h2>Đăng Kí</h2>
                 </div>
-                <form id="enableForm" action="?dn=XLRegister" method="POST" class="form-horizontal">
+                <form id="enableForm" action="login-XLRegister" method="POST" class="form-horizontal">
                     <div class="row">
                         <p style="color: red"><?php if (isset($err1)) echo $err1 ?></p>
                         <div class="col-md-6">
@@ -85,7 +86,7 @@
                                     <input type="submit" class="btn btn-info" value="Đăng kí"/>
                                     <input type="reset" class="btn btn-default" value="reset"/>
                                 <br>
-                                <a href="index"><p class="small">quay lại trang chủ</p></a>
+                                <a href="book-store"><p class="small">quay lại trang chủ</p></a>
                                 <a href="login"><p class="small">Đăng nhập</p></a>
                                 </div>
                             </div>

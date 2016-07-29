@@ -21,10 +21,10 @@
                 $diachi=$_POST['txtDiaChi'];
                 $email=$_POST['txtEmail'];
                 $quyen=$_POST['txtQuyen'];
-                $id_sua = $_GET['id_sua'];
+                $id_sua = $_GET['id'];
                 $sua_nha_xuat_ban = new M_database();
                 $sua_nha_xuat_ban->Update('taikhoan', array('TenDangNhap'=>$tendn,'TenHienThi'=>$tenhienthi,'SDT'=>$sdt,'DiaChi'=>$diachi,'Email'=>$email,'Quyen'=>$quyen), 'id_tk', $id_sua);
-                header('location:admin.php?sk=taikhoan&method=Hien&page='.$page);
+                header('location:admin-taikhoan-Hien-'.$page);
                 
             }
             if(isset($_POST['btnthem'])){
@@ -36,12 +36,12 @@
                 $quyen=$_POST['txtQuyen'];
                 $them_nha_xuat_ban = new M_database();
                 $them_nha_xuat_ban->Insert('taikhoan', array('TenDangNhap'=>$tendn,'TenHienThi'=>$tenhienthi,'SDT'=>$sdt,'DiaChi'=>$diachi,'Email'=>$email,'Quyen'=>$quyen));
-                header('location:admin.php?sk=taikhoan&method=Hien&page='.$page);
+                header('location:admin-taikhoan-Hien-'.$page);
             }
         }
         function Hien_sua_thanh_vien(){
-            if(isset($_POST['id_sua'])){
-                $id_sua = $_POST['id_sua'];
+            if(isset($_POST['id'])){
+                $id_sua = $_POST['id'];
                 $where = 'id_tk='.$id_sua;
                 include_once '../model/m_database.php';
                 $sua_nha_xuat_ban = new M_database();
@@ -50,8 +50,8 @@
             include_once '../view/v_sua_thanh_vien.php';
         }
         function Xoa_thanh_vien(){
-            if(isset($_POST['id_xoa'])){
-                $id_xoa = $_POST['id_xoa'];
+            if(isset($_POST['id'])){
+                $id_xoa = $_POST['id'];
                 include_once '../model/m_database.php';
                  $xoa = new M_database();
                  $xoa->Delete('taikhoan', 'id_tk', $id_xoa);

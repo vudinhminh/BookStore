@@ -1,13 +1,12 @@
 $(document).ready(function (e){
-    
     // thêm sửa tác giả
     $('.sua_tac_gia').click(function (){
         $.ajax({
-            url : "controller/c_tac_gia.php?method=Hien_sua_tac_gia",
+            url : "admin/controller/c_tac_gia.php?method=Hien_sua_tac_gia",
             type : "post",
             dateType:"text",
             data : {
-                 id_sua : $(this).data('id_sua'),
+                 id : $(this).data('id_sua'),
                  page : $(this).data('page')
             },
             success : function (result){
@@ -52,51 +51,19 @@ $(document).ready(function (e){
                         }
                     }
                 });
-//                $('.sua_tac_gia1').click(function (){
-//                    $.ajax({
-//                        url : 'controller/c_tac_gia.php?method=Sua_tac_gia',
-//                        type: 'POST',
-//                        dataType: 'text',
-//                        data: {
-//                            txtTenTG : $('.txtTenTG').val(),
-//                            txtSDT : $('.txtSDT').val(),
-//                            txtDiaChi : $('.txtDiaChi').val(),
-//                            btnsua : $('.sua_tac_gia1').val(),
-//                            id_sua : $(this).data('id_sua1')
-//                        },
-//                        success: function (result){
-//                            $('#right1').html(result);
-//                            location.reload();
-//                        }
-//                    });
-//                });
-//                $('.them_tac_gia1').click(function (){
-//                   // alert(1);
-//                    $.ajax({
-//                        url : 'controller/c_tac_gia.php?method=Them_tac_gia',
-//                        data: {
-//                            txtTenTG : $('.txtTenTG').val(),
-//                            txtSDT : $('.txtSDT').val(),
-//                            txtDiaChi : $('.txtDiaChi').val(),
-//                            btnthem : $('.them_tac_gia1').val(),
-//                        },
-//                        dataType: 'text',
-//                        type: 'POST',
-//                        success: function (result) {
-//                            $('#right1').html(result);
-//                            location.reload();
-//                        }
-//                    });
-//                });
             }
         });
     });
     // xóa tác giả
     $('.xoa_tac_gia').click(function (){
+       var check = confirm('bạn có chắc chắn muốn xóa không');
+        if(check === false){
+            return false;
+        }
         $.ajax({
-            url : 'controller/c_tac_gia.php?method=Xoa_tac_gia',
+            url : 'admin/controller/c_tac_gia.php?method=Xoa_tac_gia',
             data: {
-                id_xoa : $(this).data('id_xoa')                
+                id : $(this).data('id_xoa')                
             },
             dataType: 'text',
             type: 'POST',
@@ -110,10 +77,10 @@ $(document).ready(function (e){
     // thêm, sửa loại sách
     $('.sua_loai').click(function (){
         $.ajax({
-            url : 'controller/c_loai_sach.php?method=Hien_sua_loai',
+            url : 'admin/controller/c_loai_sach.php?method=Hien_sua_loai',
             data:{
-                id_sua : $(this).data('id_sua'),
-                page1 : $(this).data('page1')
+                id : $(this).data('id_sua'),
+                page : $(this).data('page1')
             },
             type: 'POST',
             dataType: 'text',
@@ -137,53 +104,23 @@ $(document).ready(function (e){
                         }
                     }
                 });
-//                $('.sua_loai1').click(function (event){
-//                    event.preventDefault();
-//                    $.ajax({
-//                        url: 'controller/c_loai_sach.php?method=Sua_loai',
-//                        data: {
-//                            txtTenLoai : $('.txtTenLoai').val(),
-//                            id_sua1: $(this).data('id_sua1')
-//                        },
-//                        dataType: 'text',
-//                        type: 'POST',
-//                        success: function (result) {
-//                            $('#right1').html(result);
-//                            location.reload();
-//                        }
-//                    });
-//                });
-//                $('.them_loai1').click(function (event){
-//                    event.preventDefault();
-//                    $.ajax({
-//                        url: 'controller/c_loai_sach.php?method=Them_loai',
-//                        data: {
-//                            txtTenLoai : $('.txtTenLoai').val(),
-//                            btnthem: $('.them_loai1').val()
-//                        },
-//                        dataType: 'text',
-//                        type: 'POST',
-//                        success: function (result) {
-//                            $('#right1').html(result);
-//                            location.reload();
-//                        }
-//                    });
-//                });
-                
             }
         });
     });
     // Xóa loại sách
     $('.xoa_loai').click(function (){
+        var check = confirm('bạn có chắc chắn muốn xóa không');
+        if(check === false){
+            return false;
+        }
         $.ajax({
-            url : 'admin.php?sk=loaisach&method=Xoa_loai',
+            url : 'admin/admin.php?sk=loaisach&method=Xoa_loai',
             data: {
-                id_xoa : $(this).data('id_xoa')                
+                id : $(this).data('id_xoa')                
             },
             dataType: 'text',
             type: 'POST',
             success: function (result) {
-//                $('#right1').html(result);
                 var html = '';
                 html = $(result).find('#loaisach1').html();
                 $('#right1').find('#loaisach1').html(html);
@@ -194,10 +131,14 @@ $(document).ready(function (e){
     });
     // thêm , sửa nhà xuất bản
     $('.sua_nha_xuat_ban').click(function (){
+        var check = confirm('bạn có chắc chắn muốn xóa không');
+        if(check === false){
+            return false;
+        }
         $.ajax({
-            url : 'controller/c_nha_xuat_ban.php?method=Hien_sua_nha_xuat_ban',
+            url : 'admin/controller/c_nha_xuat_ban.php?method=Hien_sua_nha_xuat_ban',
             data:{
-                id_sua : $(this).data('id_sua'),
+                id : $(this).data('id_sua'),
                 page : $(this).data('page')
             },
             type: 'POST',
@@ -244,51 +185,19 @@ $(document).ready(function (e){
                         }
                     }
                 });
-//                $('.sua_nha_xuat_ban1').click(function (){
-//                    $.ajax({
-//                        url : 'controller/c_nha_xuat_ban.php?method=Sua_nha_xuat_ban',
-//                        type: 'POST',
-//                        dataType: 'text',
-//                        data: {
-//                            txtTenNXB : $('.txtTenNXB').val(),
-//                            txtSDT : $('.txtSDT').val(),
-//                            txtDiaChi : $('.txtDiaChi').val(),
-//                            btnsua : $('.sua_nha_xuat_ban1').val(),
-//                            id_sua1 : $(this).data('id_sua1')
-//                        },
-//                        success: function (result){
-//                            $('#right1').html(result);
-//                            location.reload();
-//                        }
-//                    });
-//                });
-//                $('.them_nha_xuat_ban1').click(function (){
-//                   // alert(1);
-//                    $.ajax({
-//                        url : 'controller/c_nha_xuat_ban.php?method=Them_nha_xuat_ban',
-//                        data: {
-//                            txtTenNXB : $('.txtTenNXB').val(),
-//                            txtSDT : $('.txtSDT').val(),
-//                            txtDiaChi : $('.txtDiaChi').val(),
-//                            btnthem : $('.them_nha_xuat_ban1').val()
-//                        },
-//                        dataType: 'text',
-//                        type: 'POST',
-//                        success: function (result) {
-//                            $('#right1').html(result);
-//                            location.reload();
-//                        }
-//                    });
-//                });
             }
         });
     });
     // Xóa nhà xuất bản
     $('.xoa_nha_xuat_ban').click(function (){
+        var check = confirm('bạn có chắc chắn muốn xóa không');
+        if(check === false){
+            return false;
+        }
         $.ajax({
-            url : 'controller/c_nha_xuat_ban.php?method=Xoa_nha_xuat_ban',
+            url : 'admin/controller/c_nha_xuat_ban.php?method=Xoa_nha_xuat_ban',
             data: {
-                id_xoa : $(this).data('id_xoa')                
+                id : $(this).data('id_xoa')                
             },
             dataType: 'text',
             type: 'POST',
@@ -296,16 +205,15 @@ $(document).ready(function (e){
                 $('#right1').html(result);
                 location.reload();
             }
-            
         });        
     });
     //sửa sách
     $('.sua_sach').click(function (){
         $.ajax({
-            url : 'controller/c_sach.php?method=Hien_sua_sach',
+            url : 'admin/controller/c_sach.php?method=Hien_sua_sach',
             data:{
-                id_sua : $(this).data('id_sua'),
-                page : $(this).data('page'),
+                id : $(this).data('id_sua'),
+                page : $(this).data('page')
             },
             type: 'POST',
             dataType: 'text',
@@ -353,8 +261,6 @@ $(document).ready(function (e){
                                     message: 'Chưa chọn ảnh'
                                 },
                                 file: {
-                                   // extension: 'jpg',
-                                    //type: 'application/jpg',
                                     maxSize: 10 * 1024 * 1024,
                                     message: 'Kích thước ảnh không được lớn hơn 10MB'
                                 }
@@ -431,10 +337,14 @@ $(document).ready(function (e){
     });
     // xoas sach
     $('.xoa_sach').click(function (){
+        var check = confirm('bạn có chắc chắn muốn xóa không');
+        if(check === false){
+            return false;
+        }
         $.ajax({
-            url : 'controller/c_sach.php?method=Xoa_sach',
+            url : 'admin/controller/c_sach.php?method=Xoa_sach',
             data: {
-                id_xoa : $(this).data('id_xoa')                
+                id : $(this).data('id_xoa')                
             },
             dataType: 'text',
             type: 'POST',
@@ -447,10 +357,11 @@ $(document).ready(function (e){
     });
     // thêm , sửa thanh viên
     $('.sua_thanh_vien').click(function (){
+        
         $.ajax({
-            url : 'controller/c_thanh_vien.php?method=Hien_sua_thanh_vien',
+            url : 'admin/controller/c_thanh_vien.php?method=Hien_sua_thanh_vien',
             data:{
-                id_sua : $(this).data('id_sua'),
+                id : $(this).data('id_sua'),
                 page : $(this).data('page')
             },
             type: 'POST',
@@ -520,10 +431,18 @@ $(document).ready(function (e){
     });
     // Xóa thành viên
     $('.xoa_thanh_vien').click(function (){
+        if($(this).data('id_xoa') == 1){
+            alert('Bạn không được xóa tài khoản này');
+            return false;
+        }
+        var check = confirm('bạn có chắc chắn muốn xóa không');
+        if(check === false){
+            return false;
+        }
         $.ajax({
-            url : 'controller/c_thanh_vien.php?method=Xoa_thanh_vien',
+            url : 'admin/controller/c_thanh_vien.php?method=Xoa_thanh_vien',
             data: {
-                id_xoa : $(this).data('id_xoa')                
+                id : $(this).data('id_xoa')                
             },
             dataType: 'text',
             type: 'POST',
@@ -534,12 +453,12 @@ $(document).ready(function (e){
             
         });        
     });
-    // thêm , sửa thanh viên
+    // thêm , sửa đơn hàng
     $('.sua_don_hang').click(function (){
         $.ajax({
-            url : 'controller/c_don_hang.php?method=Hien_sua_don_hang',
+            url : 'admin/controller/c_don_hang.php?method=Hien_sua_don_hang',
             data:{
-                id_sua : $(this).data('id_sua'),
+                id : $(this).data('id_sua'),
                 page : $(this).data('page')
             },
             type: 'POST',
@@ -607,12 +526,16 @@ $(document).ready(function (e){
             }
         });
     });
-    // Xóa thành viên
+    // Xóa đơn hàng
     $('.xoa_don_hang').click(function (){
+        var check = confirm('bạn có chắc chắn muốn xóa không');
+        if(check === false){
+            return false;
+        }
         $.ajax({
-            url : 'controller/c_don_hang.php?method=Xoa_don_hang',
+            url : 'admin/controller/c_don_hang.php?method=Xoa_don_hang',
             data: {
-                id_xoa : $(this).data('id_xoa')                
+                id : $(this).data('id_xoa')                
             },
             dataType: 'text',
             type: 'POST',
@@ -624,30 +547,3 @@ $(document).ready(function (e){
         });        
     });
 });
-
-//    var page_id = 1;
-//    $('.ptloaisach').click(function (){
-//        page_id = $(this).data('id');
-//        //alert(page_id);
-//        $('#right').html('');
-//        $.ajax({
-//            url : 'admin.php?sk=loaisach&method=Hien',
-//            data: {  
-//                page : page_id
-//            },
-//            dataType: 'text',
-//            type: 'POST',
-//            async: false,
-//            success: function (result) {
-//                var html = '';
-//                html = $(result).find('#loaisach1').html();
-//                $('#right1').find('#loaisach1').html(html);
-//                
-//            }
-//            
-//        });
-//        
-//    });
-//    
-//    
-//});

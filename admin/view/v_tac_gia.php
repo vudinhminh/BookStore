@@ -1,4 +1,3 @@
-<!--<button type="button" class="sua_tac_gia btn btn-info btn-lg " data-toggle="modal" data-target="#myModal">Thêm tác giả</button>-->
 <input type="button" class="sua_tac_gia btn btn-info" data-page="<?php echo $page ?>" data-toggle="modal" data-target="#myModal1" value="Thêm Tác Giả">
 <div class="row">
 <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

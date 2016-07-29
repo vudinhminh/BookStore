@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>Đăng nhập</title>
-	<link rel="stylesheet" href="../public/css/animate.css">
-	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="../public/css/style2.css">
-	<script src="../public/js/jquery-1.12.0.min.js"></script>
+        <link rel="shortcut icon" href="<?php echo FULL_SITE_ROOT ?>public/images/icon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>public/css/animate.css">
+	<link rel="stylesheet" href="<?php echo FULL_SITE_ROOT ?>public/css/style2.css">
+	<script src="<?php echo FULL_SITE_ROOT ?>public/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 	<div class="container">
             <div class="login-box animated fadeInUp" style="max-width:340px">
-                <form action="?dn=xllogin" method="POST" >
+                <form action="login_admin-xllogin" method="POST" >
                     <div class="box-header">
                             <h2>Đăng nhập</h2>
                     </div>

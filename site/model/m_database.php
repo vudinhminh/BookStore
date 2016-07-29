@@ -3,20 +3,12 @@
         private $__conn;
         function __construct() {
             if (!isset($this->__conn)){
-            $this->__conn = mysqli_connect("localhost", "root", "", "bansach");
+            $this->__conn = mysqli_connect("localhost", "root", "", "bansach") or die("Cơ sở dữ liệu không tồn tại");
             mysqli_query($this->__conn, "set names utf8");
             }
         }
         function GetAll($table){
             $sql = "select * from ".$table;
-            $query =  mysqli_query($this->__conn, $sql);
-            $result = array();
-            while ($row =  mysqli_fetch_assoc($query)){
-                $result[] = $row;
-            }
-            return $result;
-        }
-        function GetAllDESC($table){
             $query =  mysqli_query($this->__conn, $sql);
             $result = array();
             while ($row =  mysqli_fetch_assoc($query)){
@@ -30,7 +22,6 @@
             $row =  mysqli_fetch_assoc($query);
             return $row;
         }
-        
         function GetAll_Sachpt($limit,$page){
             $sql = 'select id,HinhAnh,TenSach,tacgia.TenTG,nhaxuatban.TenNXB,GiaCu,loaisach.TenLoai,SoTrang,SoLuong,'
                     . 'GiaMoi,round(100-GiaMoi/GiaCu*100,0) as gia from sach,loaisach,nhaxuatban,tacgia '
@@ -52,6 +43,19 @@
             
             $row =  mysqli_fetch_assoc($query);
             return $row;
+        }
+        function GetAll_Seach($search,$limit,$page){
+            $sql = 'select id,HinhAnh,sach.id_tg,sach.id_nxb,TenSach,tacgia.TenTG,nhaxuatban.TenNXB,GiaCu,loaisach.TenLoai,SoTrang,SoLuong,'
+                    . 'GiaMoi,round(GiaMoi/GiaCu*100-100,0) as gia from sach,loaisach,nhaxuatban,tacgia '
+                    . ' where sach.id_loai=loaisach.id_loai and sach.id_nxb=nhaxuatban.id_nxb and'
+                    . ' sach.id_tg=tacgia.id_tg and TenSach like "%'.$search.'%" order by id DESC limit '.$limit*($page-1).','.$limit;
+            
+            $query =  mysqli_query($this->__conn, $sql);
+            $result = array();
+            while ($row =  mysqli_fetch_assoc($query)){
+                $result[] = $row;
+            }
+            return $result;
         }
         function GetAll_Sach_IdLoai($id_loai,$limit,$page){
             $sql = 'select id,HinhAnh,sach.id_tg,sach.id_nxb,TenSach,tacgia.TenTG,nhaxuatban.TenNXB,GiaCu,loaisach.TenLoai,SoTrang,SoLuong,'
@@ -174,6 +178,30 @@
             $hientrang .="</ul></div>";
             return $hientrang;
         }
+        function PhanTrangSeach($search,$url,$limit,$page){
+            $search = preg_replace('#[^0-9a-z]#i', '', $search);
+            $sql1 = "select * from sach where TenSach like '%$search%'";
+            $query1 = mysqli_query($this->__conn, $sql1);
+            $tongdong = mysqli_num_rows($query1);
+            $sotrang = ceil($tongdong/$limit);
+            $trangtruoc = $page - 1;
+            $trangsau = $page + 1;
+            $hientrang ="<div class='pagination span12' style='clear: both;'><ul class='pagination'>";
+            if($page>1){
+            $hientrang.="<li><a href='".$url."&page=".$trangtruoc."'  data-id='".$trangtruoc."' >Prev</a></li>";
+            }
+            for($i=1; $i <= $sotrang;$i++)
+            {
+                if($i==$page) $phantrang2 = 'active';
+                else $phantrang2 = '';
+                $hientrang .= " <li class='".$phantrang2."'><a href='".$url."&page=".$i."' data-id='".$i."'>".$i."</a></li> ";
+            }
+            if($page<$sotrang){
+            $hientrang.="<li><a href='".$url."&page=".$trangsau."' data-id='".$trangsau."' >Next</a></li>";
+            }
+            $hientrang .="</ul></div>";
+            return $hientrang;
+        }
          function GetLimit($table,$limit){
             $sql = "select * from ".$table.' limit 0,'.$limit;
             $query =  mysqli_query($this->__conn, $sql);
@@ -202,7 +230,19 @@
                 $_SESSION['user']['sdt']=$row['SDT'];
                 $_SESSION['user']['email']=$row['Email'];
                 $_SESSION['user']['diachi']=$row['DiaChi'];
-                header('location:index');
+                $_SESSION['user']['tendangnhap']=$row['TenDangNhap'];
+                $_SESSION['user']['matkhau']=$row['MatKhau'];
+                ob_start();
+                ?>
+                <script>
+                    alert('đăng nhập thành công');
+                    window.location = 'book-store';
+                </script>
+
+                <?php
+                $html = ob_get_clean();
+                echo $html;
+                die();
             }
             else {
                 $err = 'mật khẩu không đúng';
@@ -228,7 +268,7 @@
             $luotxem = $row['SoLuotXem'];
             $luotxem ++;
             $sql1 = 'update sach set SoLuotXem ='.$luotxem.' where id = '.$id;
-            $query = mysqli_query($this->__conn, $sql1);
+            mysqli_query($this->__conn, $sql1);
         }
         function Get_Sach_xem_nhieu(){
             $sql = 'select id,SoLuotXem,HinhAnh,TenSach,sach.id_tg,tacgia.TenTG,nhaxuatban.TenNXB,GiaCu,loaisach.TenLoai,SoTrang,SoLuong,'
@@ -258,8 +298,20 @@
                 $this->Insert('chitiethoadon',$arr1);
             }
         }
-
-        
+        function Search($search){
+            $search = preg_replace('#[^0-9a-z]#i', '', $search);
+            $sql = "select * from sach where TenSach like '%$search%'";
+            $query =  mysqli_query($this->__conn, $sql);
+            $result = array();
+            while ($row =  mysqli_fetch_assoc($query)){
+                $result[] = $row;
+            }
+            return $result;
+        }
+        function DoiMK($matkhau,$tendangnhap){
+            $sql="update taikhoan set MatKhau='".$matkhau."' where TenDangNhap ='".$tendangnhap."'";
+            mysqli_query($this->__conn, $sql);
+        }
     }
 //           $tenloai='minh';
 //	$them_loai_sach = new M_database();

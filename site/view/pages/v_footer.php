@@ -14,13 +14,13 @@
                     </figure>
                     <figure class="span3">
                         <h4>Tài khoản của bạn</h4>
-                        <p><a href="login.php">Đăng nhập</a></p>
-                        <p><a href="login.php?dn=register">Đăng ký</a></p>
+                        <p><a href="login">Đăng nhập</a></p>
+                        <p><a href="login-register">Đăng ký</a></p>
                     </figure>
                     <figure class="span3">
                         <h4>Về cửa hàng</h4>
-                        <p><a href="?cn=home&method=lienhe">Địa chỉ</a></p>
-                        <p><a href="?cn=home&method=gioithieu">Giới thiệu cửa hàng</a></p>
+                        <p><a href="book-store-lienhe">Địa chỉ</a></p>
+                        <p><a href="book-store-gioithieu">Giới thiệu cửa hàng</a></p>
                         <p><a href="">Tuyển dụng</a></p>
                         <p><a href="">Chính sách bảo mật</a></p>
                     </figure>
@@ -54,10 +54,10 @@
                 <section class="container">
                     <section class="row-fluid">
                         <article class="span6">
-                            <p>© 2016 - Bản quyền của developer Minh Vũ - Minhvu.vn</p>
+                            <p>© 2016 - Bản quyền của developer Đình Minh - DinhMinh.vn</p>
                         </article>
                         <article class="span6 copy-right">
-                            <p>Cửa hàng <a href="?cn=home">MinhVu</a></p>
+                            <p>Cửa hàng <a href="book-store">BookStore Đình Minh</a></p>
                         </article>
                     </section>
                 </section>
@@ -65,18 +65,18 @@
         </footer>
 
     </div>
-<script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-<script src="public/js/bootstrap.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="public/js/lib.js"></script> 
-<script type="text/javascript" src="public/js/bxslider.js"></script> 
-<script src="public/js/range-slider.js"></script> 
-<script src="public/js/jquery.zoom.js"></script> 
-<script type="text/javascript" src="public/js/bookblock.js"></script> 
-<script type="text/javascript" src="public/js/custom.js"></script> 
-<script type="text/javascript" src="public/js/social.js"></script> 
-<script src="public/js/formValidation.min1.js" type="text/javascript"></script>
-<script src="public/js/formValidation.min2.js" type="text/javascript"></script>
-<script src="public/js/index1.js" type="text/javascript"></script>
+<script src="<?php echo FULL_SITE_ROOT ?>vpublic/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/lib.js"></script> 
+<script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/bxslider.js"></script> 
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/range-slider.js"></script> 
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/jquery.zoom.js"></script> 
+<script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/bookblock.js"></script> 
+<script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/custom.js"></script> 
+<script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/social.js"></script> 
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/formValidation.min1.js" type="text/javascript"></script>
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/formValidation.min2.js" type="text/javascript"></script>
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/index1.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(document).ready(function() {
   $('.social_active').hoverdir( {} );

@@ -28,7 +28,7 @@
             <td><?php echo $values['TenNXB'] ?></td>
             <td><?php echo $values['TenTG'] ?></td>
             <td><?php echo $values['TenLoai'] ?></td>
-            <td><img src="../upload/<?php echo $values['HinhAnh'] ?>" height="60px" width="40px"></td>
+            <td><img src="<?php echo FULL_SITE_ROOT ?>upload/<?php echo $values['HinhAnh'] ?>" height="60px" width="40px"></td>
             <td><?php echo number_format($values['GiaCu'], 0,'.',',') ?></td>
             <td><?php echo number_format($values['GiaMoi'],0,'.',',') ?></td>
             <td><?php echo $values['SoLuong'] ?></td>

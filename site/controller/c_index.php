@@ -1,5 +1,6 @@
 <?php
 include_once 'site/model/m_database.php';
+include_once 'config.php';
 include_once 'site/view/pages/v_header.php';
     $cn = isset($_GET['cn'])?$_GET['cn']:'home';
     switch($cn)

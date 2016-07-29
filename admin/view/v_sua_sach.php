@@ -1,4 +1,4 @@
-<form id="loginForm" class="form-horizontal" action="admin.php?sk=sach&method=Them_sach&page=<?php echo $_POST['page'] ?>&id_sua_sach1=<?php if(isset($row['TenSach'])) echo $row['id']; ?>" method="POST"  enctype="multipart/form-data" >
+<form id="loginForm" class="form-horizontal" action="admin-sach-Them_sach-<?php echo $_POST['page'] ?><?php if(isset($row['TenSach'])) echo '-'.$row['id']; ?>" method="POST"  enctype="multipart/form-data" >
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-4 control-label">Tên sách</label>
         <div class="col-sm-8">
@@ -94,7 +94,7 @@
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-             <?php if(isset($_POST['id_sua'])){?>
+             <?php if(isset($_POST['id'])){?>
             <button type="submit" name="btn_sua_sach"  class="btn btn-default sua_sach1">Sửa</button>
             <?php }else{ ?>
             <button type="submit" name="btn_them_sach" class="btn btn-default them_sach1">Thêm</button>

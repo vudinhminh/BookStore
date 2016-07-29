@@ -1,8 +1,9 @@
 <?php
     session_start();
     if(!isset($_SESSION['admin'])){
-        header('location:login.php');
+        header('location:login_admin');
     }
+    include_once '../config.php';
     include_once 'view/v_head1.php';
     include_once 'model/m_database.php';
     if(!isset($_GET['sk'])){
@@ -36,4 +37,3 @@
         }
     }
     include_once 'view/v_footer1.php';
-?>

@@ -43,6 +43,13 @@ $(document).ready(function() {
                             message: 'Số điện thoại khong được để rỗng'
                         }
                     }
+                },
+                txtCaptCha: {
+                    validators: {
+                        notEmpty: {
+                            message: 'captcha khong được để rỗng'
+                        }
+                    }
                 }
                 
             }
@@ -50,5 +57,10 @@ $(document).ready(function() {
     $('#menu1').click(function (){
         $(".menu1").toggle();
     });
-        
+    $('.delete-book').click(function(){
+        var check = confirm('Bạn có muốn xóa không');
+        if (check == false) {
+            return false;
+        } 
+    }); 
 });
