@@ -65,7 +65,7 @@
         </footer>
 
     </div>
-<script src="<?php echo FULL_SITE_ROOT ?>vpublic/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 <script src="<?php echo FULL_SITE_ROOT ?>public/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/lib.js"></script> 
 <script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/bxslider.js"></script> 

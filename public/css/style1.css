@@ -40,3 +40,22 @@ input{
 #form_gio_hang .center1{
     text-align: center;
 }
+@media (max-width: 1200px) {
+    .chinh1 {
+        margin: 10px 10px;
+    }
+}
+@media (max-width: 1000px) {
+    .chinh1 {
+        margin: 10px 5px;
+    }
+    
+}
+@media (min-width: 785px) and (max-width: 1000px) {
+    .grid-holder img {
+        height: 200px;
+    }
+    .chinh1{
+        height: 375px;
+    }
+}
