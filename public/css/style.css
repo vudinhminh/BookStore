@@ -158,7 +158,7 @@ body{
 .left{
     margin-bottom: 20px;
 }
-/*PhÃ¢n trang*/
+/*PhÃƒÂ¢n trang*/
 .phantrang{
     margin: 0 auto;
     text-align: center;
@@ -169,6 +169,19 @@ body{
 #menu1{
     display: none;
     border: 0px;
+}
+.btn_social a{
+    max-width: 40px !important;
+    max-height: 40px !important;
+    margin-right: 10px !important;
+}
+.btn_social span:last-child{
+    height: 40px !important;
+    width: 40px !important;
+}
+.btn_social span svg{
+    height: 40px !important;
+    width: 40px !important;
 }
 @media (max-width: 700px) {
     #menu1{
@@ -202,6 +215,19 @@ body{
     .table_gio_hang img{
         width: 70px !important;
         height: 100px !important;
+    }
+    .btn_social a{
+        max-width: 30px !important;
+        max-height: 30px !important;
+        margin-right: 10px !important;
+    }
+    .btn_social span:last-child{
+        height: 30px !important;
+        width: 30px !important;
+    }
+    .btn_social span svg{
+        height: 30px !important;
+        width: 30px !important;
     }
     
 }
@@ -257,3 +283,4 @@ textarea{
         height: 150px;
     }*/
 }
+

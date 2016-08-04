@@ -37,7 +37,9 @@
             <section class="social-ico-bar">
                 <section class="container">
                     <section class="row-fluid">
-                       
+                        <div class="col-md-6 col-xs-12 btn_social">
+                            <div class="addthis_sharing_toolbox"></div>
+                        </div>
                     </section>
                 </section>
             </section>
@@ -66,6 +68,7 @@
 
     </div>
 <script src="<?php echo FULL_SITE_ROOT ?>public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="<?php echo FULL_SITE_ROOT ?>public/js/addthis_widget.js#pubid=ra-57a012c37e7dc1fa"></script>
 <script src="<?php echo FULL_SITE_ROOT ?>public/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/lib.js"></script> 
 <script type="text/javascript" src="<?php echo FULL_SITE_ROOT ?>public/js/bxslider.js"></script> 
