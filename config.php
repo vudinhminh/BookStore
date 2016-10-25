@@ -1,4 +1,10 @@
 <?php
+
+define('CONST_DB_SERVER_ADDRESS', 'localhost');
+define('CONST_DB_DATABASE_NAME', 'book-store');
+define('CONST_DB_USER_NAME', 'root');
+define('CONST_DB_USER_PASSWORD', '');
+
 //Duong dan dia chi goc
 //          o   /virtual-directory/: Chay bang thu muc ao (Virtual Directory)
 //          o   /                  : Chay bang domain
